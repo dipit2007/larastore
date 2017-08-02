@@ -181,6 +181,8 @@ return [
 
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
+        Amsgames\LaravelShop\LaravelShopProvider::class,
+
     ],
 
     /*
@@ -232,6 +234,7 @@ return [
 
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
 
+        'Shop' => Amsgames\LaravelShop\LaravelShopFacade::class,
     ],
 
 ];
