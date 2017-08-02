@@ -183,6 +183,8 @@ return [
 
         Amsgames\LaravelShop\LaravelShopProvider::class,
 
+        Yajra\Datatables\DatatablesServiceProvider::class,
+
     ],
 
     /*
