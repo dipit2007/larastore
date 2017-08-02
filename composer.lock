@@ -4,9 +4,119 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45d6a5d9f1b367b279a7b047781d293e",
-    "content-hash": "71d057e6eeeab29c8d2001e9c6047b2b",
+    "hash": "83f430300166418e72c1b624ea267be5",
+    "content-hash": "2a80c5767ed0dd06d647d85638551af6",
     "packages": [
+        {
+            "name": "amsgames/laravel-shop",
+            "version": "v0.2.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amsgames/laravel-shop.git",
+                "reference": "883af2da405722f4eb0ca83ac78d039decef6d55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amsgames/laravel-shop/zipball/883af2da405722f4eb0ca83ac78d039decef6d55",
+                "reference": "883af2da405722f4eb0ca83ac78d039decef6d55",
+                "shasum": ""
+            },
+            "require": {
+                "amsgames/laravel-shop-gateway-paypal": "1.0.*",
+                "illuminate/console": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/Commands"
+                ],
+                "psr-4": {
+                    "Amsgames\\LaravelShop\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Amsgames, LLC",
+                    "email": "support@amsgames.com"
+                },
+                {
+                    "name": "Alejandro Mostajo",
+                    "email": "amostajo@gmail.com"
+                }
+            ],
+            "description": "Package set to provide shop or e-commerce functionality (such as CART, ORDERS, TRANSACTIONS and ITEMS) to Laravel for customizable builds.",
+            "keywords": [
+                "cart",
+                "e-commerce",
+                "ecommerce",
+                "laravel",
+                "orders",
+                "paypal",
+                "shop",
+                "shopping",
+                "shopping cart",
+                "transactions"
+            ],
+            "time": "2015-11-18 00:03:41"
+        },
+        {
+            "name": "amsgames/laravel-shop-gateway-paypal",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amsgames/laravel-shop-gateway-paypal.git",
+                "reference": "c0ba041bda3fdcc696e4a01278647f386e9d8715"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amsgames/laravel-shop-gateway-paypal/zipball/c0ba041bda3fdcc696e4a01278647f386e9d8715",
+                "reference": "c0ba041bda3fdcc696e4a01278647f386e9d8715",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "~5.0",
+                "illuminate/support": "~5.0",
+                "paypal/rest-api-sdk-php": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "sami/sami": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Amsgames\\LaravelShopGatewayPaypal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Amsgames, LLC",
+                    "email": "support@amsgames.com"
+                },
+                {
+                    "name": "Alejandro Mostajo",
+                    "email": "amostajo@gmail.com"
+                }
+            ],
+            "description": "PayPal gateway for Laravel Shop package.",
+            "keywords": [
+                "gateway",
+                "laravel shop",
+                "laravel-shop",
+                "paypal"
+            ],
+            "time": "2015-09-19 04:10:42"
+        },
         {
             "name": "defuse/php-encryption",
             "version": "v2.1.0",
@@ -1366,6 +1476,55 @@
                 "random"
             ],
             "time": "2017-03-13 16:27:32"
+        },
+        {
+            "name": "paypal/rest-api-sdk-php",
+            "version": "1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paypal/PayPal-PHP-SDK.git",
+                "reference": "0925b11ee2261fe369f2bd7a6abfc1bf322a6601"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paypal/PayPal-PHP-SDK/zipball/0925b11ee2261fe369f2bd7a6abfc1bf322a6601",
+                "reference": "0925b11ee2261fe369f2bd7a6abfc1bf322a6601",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.3.0",
+                "psr/log": "^1.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PayPal": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "PayPal",
+                    "homepage": "https://github.com/paypal/rest-api-sdk-php/contributors"
+                }
+            ],
+            "description": "PayPal's PHP SDK for REST APIs",
+            "homepage": "http://paypal.github.io/PayPal-PHP-SDK/",
+            "keywords": [
+                "payments",
+                "paypal",
+                "rest",
+                "sdk"
+            ],
+            "time": "2017-07-11 19:16:53"
         },
         {
             "name": "phpseclib/phpseclib",
