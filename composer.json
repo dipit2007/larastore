@@ -11,6 +11,7 @@
         "laravel/framework": "5.4.*",
         "laravel/passport": "^3.0",
         "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.4.0",
         "yajra/laravel-datatables-oracle": "^7.9"
     },
     "require-dev": {
