@@ -185,6 +185,8 @@ return [
 
         Yajra\Datatables\DatatablesServiceProvider::class,
 
+        Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -237,6 +239,9 @@ return [
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
 
         'Shop' => Amsgames\LaravelShop\LaravelShopFacade::class,
+
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
