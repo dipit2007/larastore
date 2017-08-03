@@ -4,7 +4,34 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductAttributeValue extends Model
+use App\BaseModel;
+
+class ProductAttributeValue extends BaseModel
 {
-    //
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    //protected $table = 'product_attribute_values';
+
+    /**
+     * The database column as primary key used by the model.
+     *
+     * @var string
+     */
+    //protected $primarykey = 'id';
+
+
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['product_attribute_id','attributevalue','description','status'];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'created_by', 'id');
+    }
 }
