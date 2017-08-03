@@ -36,7 +36,7 @@ class CreateProductAttributesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->unique(['product_id', 'name']); // One Product One Size
+            $table->unique(['product_id', 'name'],'unique_product_id_name'); // One Product One Size
         });
     }
 
