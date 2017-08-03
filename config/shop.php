@@ -40,7 +40,7 @@ return [
     | This is the table used by LaravelShop to save cart data to the database.
     |
     */
-    'cart_table' => 'cart',
+    'cart_table' => 'shop_carts',
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ return [
     | This is the table used by LaravelShop to save order data to the database.
     |
     */
-    'order_table' => 'orders',
+    'order_table' => 'shop_orders',
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ return [
     | This is the table used by LaravelShop to save order status data to the database.
     |
     */
-    'order_status_table' => 'order_status',
+    'order_status_table' => 'shop_order_status',
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +92,7 @@ return [
     | This is the table used by LaravelShop to save cart data to the database.
     |
     */
-    'item_table' => 'items',
+    'item_table' => 'shop_items',
 
     /*
     |--------------------------------------------------------------------------
@@ -113,7 +113,7 @@ return [
     | This is the table used by LaravelShop to save cart data to the database.
     |
     */
-    'transaction_table' => 'transactions',
+    'transaction_table' => 'shop_transactions',
 
     /*
     |--------------------------------------------------------------------------
@@ -134,7 +134,7 @@ return [
     | This is the table used by LaravelShop to save order data to the database.
     |
     */
-    'coupon_table' => 'coupons',
+    'coupon_table' => 'shop_coupons',
 
     /*
     |--------------------------------------------------------------------------
