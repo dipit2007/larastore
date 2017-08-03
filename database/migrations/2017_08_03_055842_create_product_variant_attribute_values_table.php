@@ -16,7 +16,7 @@ class CreateProductVariantAttributeValuesTable extends Migration
         Schema::create('product_variant_attribute_values', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->string('product_sku',255);
+            $table->string('product_sku',160);
             $table->foreign('product_sku','product_variant_attribute_value_f1')->references('sku')->on('product_variants');
 
             $table->unsignedInteger('product_attribute_id');

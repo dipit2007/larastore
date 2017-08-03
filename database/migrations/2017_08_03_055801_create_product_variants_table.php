@@ -19,7 +19,7 @@ class CreateProductVariantsTable extends Migration
             $table->unsignedInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
 
-            $table->string('sku',255)->unique();
+            $table->string('sku',160)->unique();
 
             $table->decimal('price', 20, 2)->default(0);
             $table->decimal('tax', 20, 2)->default(0);

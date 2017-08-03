@@ -22,7 +22,7 @@ class CreateProductAttributeValuesTable extends Migration
             $table->unsignedInteger('product_attribute_id');
             $table->foreign('product_attribute_id')->references('id')->on('product_attributes');
 
-            $table->string('attributevalue',255);
+            $table->string('attributevalue',150);
             $table->string('description',255)->nullable();
 
             $table->tinyInteger('status')->default(0);
