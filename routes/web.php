@@ -55,4 +55,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 */
 
 
+Route::group(
+	[
+		'prefix'=>'backend',
+		//'namespace'=>'Backend',
+		'middleware' => 'auth'
+    ],
+    function()
+    {
 
+    }
+);
