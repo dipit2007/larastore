@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\ProductBrand;
 use Illuminate\Http\Request;
 
+use Validator;
+
+use Yajra\Datatables\Datatables;
+
+use URL;
+
 class ProductBrandController extends Controller
 {
     /**
@@ -52,7 +58,25 @@ class ProductBrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:100',
+            'description' => 'required|max:255',
+            //'status' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('admin.brand.create'))
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        $brand = new ProductBrand;
+        $brand->name = $request->name;
+        $brand->description = $request->description;
+        $brand->status = 1;
+        $brand->save();
+
+        return redirect(route('admin.brand.index'));
     }
 
     /**

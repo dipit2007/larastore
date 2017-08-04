@@ -41,14 +41,14 @@
                                 <label for="brand_name">Name</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="brand_name" class="form-control" placeholder="Enter brand name">
+                                        <input type="text" name="name" id="brand_name" class="form-control" placeholder="Enter brand name">
                                     </div>
                                 </div>
 
                                 <label for="brand_description">Desciption</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="brand_description" class="form-control" placeholder="Enter brand description">
+                                        <input type="text" name="description" id="brand_description" class="form-control" placeholder="Enter brand description">
                                     </div>
                                 </div>
                                 
