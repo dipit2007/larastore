@@ -76,6 +76,26 @@ Route::group(
         	return view('theme.backend.pages.dashboard',[ 'menu' => "dashboard", 'submenu' => 'dashboard' ]);
         });
     	// dashboard END
+
+        // BRAND START 
+
+        Route::get('brand/datatable', [ 'as' => 'admin.brand.datatable', 'uses' => 'ProductBrandController@datatable']);
+        Route::resource('brand','ProductBrandController', [
+            'names' => [
+                'index' => 'admin.brand.index',
+                'create' => 'admin.brand.create',
+                'store' => 'admin.brand.store',
+                'show' => 'admin.brand.show',
+                'edit' => 'admin.brand.edit',
+                'update' => 'admin.brand.update',
+                'destroy' => 'admin.brand.destroy',
+            ],
+
+            'parameters' => [
+                'id' => 'id'
+            ]
+        ]);
+        // BRAND END 
     }
 );
 

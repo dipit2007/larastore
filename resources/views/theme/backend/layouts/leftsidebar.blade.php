@@ -27,10 +27,16 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active">
-                        <a href="../../index.html">
+                    <li @if($menu == "dashboard") class="active" @endif>
+                        <a href="/backend">
                             <i class="material-icons">home</i>
                             <span>Home</span>
+                        </a>
+                    </li>
+                    <li @if($menu == "brand") class="active" @endif>
+                        <a href="{{ route('admin.brand.index') }}">
+                            <i class="material-icons">text_fields</i>
+                            <span>Brand</span>
                         </a>
                     </li>
                     
