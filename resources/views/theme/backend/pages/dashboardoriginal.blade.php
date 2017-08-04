@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Blank Page | Bootstrap Based Admin Template - Material Design</title>
+    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
-    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -21,19 +22,17 @@
     <!-- Animation Css -->
     <link href="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/animate-css/animate.css') }}" rel="stylesheet" />
 
-    @yield('pageLevelPluginCSS')
+    <!-- Morris Chart Css-->
+    <link href="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/morrisjs/morris.css') }}" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="{{ asset('theme/backend/AdminBSBMaterialDesign/css/style.css') }}" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('theme/backend/AdminBSBMaterialDesign/css/themes/all-themes.css') }}" rel="stylesheet" />
-
-    @yield('pageLevelCSS')
-
 </head>
 
-<body class="theme-teal">
+<body class="theme-red">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -71,7 +70,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">ADMINBSB - MATERIAL DESIGN</a>
+                <a class="navbar-brand" href="index.html">ADMINBSB - MATERIAL DESIGN</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -272,14 +271,12 @@
     </nav>
     <!-- #Top Bar -->
     <section>
-        @include('theme.backend.layouts.leftsidebar')
-        @if(0)
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="../../images/user.png" width="48" height="48" alt="User" />
+                    <img src="images/user.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
@@ -303,20 +300,21 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li>
-                        <a href="../../index.html">
+                    <li class="active">
+                        <a href="index.html">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
                     </li>
+                    @if(0)
                     <li>
-                        <a href="../../pages/typography.html">
+                        <a href="pages/typography.html">
                             <i class="material-icons">text_fields</i>
                             <span>Typography</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/helper-classes.html">
+                        <a href="pages/helper-classes.html">
                             <i class="material-icons">layers</i>
                             <span>Helper Classes</span>
                         </a>
@@ -333,13 +331,13 @@
                                 </a>
                                 <ul class="ml-menu">
                                     <li>
-                                        <a href="../../pages/widgets/cards/basic.html">Basic</a>
+                                        <a href="pages/widgets/cards/basic.html">Basic</a>
                                     </li>
                                     <li>
-                                        <a href="../../pages/widgets/cards/colored.html">Colored</a>
+                                        <a href="pages/widgets/cards/colored.html">Colored</a>
                                     </li>
                                     <li>
-                                        <a href="../../pages/widgets/cards/no-header.html">No Header</a>
+                                        <a href="pages/widgets/cards/no-header.html">No Header</a>
                                     </li>
                                 </ul>
                             </li>
@@ -349,19 +347,19 @@
                                 </a>
                                 <ul class="ml-menu">
                                     <li>
-                                        <a href="../../pages/widgets/infobox/infobox-1.html">Infobox-1</a>
+                                        <a href="pages/widgets/infobox/infobox-1.html">Infobox-1</a>
                                     </li>
                                     <li>
-                                        <a href="../../pages/widgets/infobox/infobox-2.html">Infobox-2</a>
+                                        <a href="pages/widgets/infobox/infobox-2.html">Infobox-2</a>
                                     </li>
                                     <li>
-                                        <a href="../../pages/widgets/infobox/infobox-3.html">Infobox-3</a>
+                                        <a href="pages/widgets/infobox/infobox-3.html">Infobox-3</a>
                                     </li>
                                     <li>
-                                        <a href="../../pages/widgets/infobox/infobox-4.html">Infobox-4</a>
+                                        <a href="pages/widgets/infobox/infobox-4.html">Infobox-4</a>
                                     </li>
                                     <li>
-                                        <a href="../../pages/widgets/infobox/infobox-5.html">Infobox-5</a>
+                                        <a href="pages/widgets/infobox/infobox-5.html">Infobox-5</a>
                                     </li>
                                 </ul>
                             </li>
@@ -374,74 +372,74 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../../pages/ui/alerts.html">Alerts</a>
+                                <a href="pages/ui/alerts.html">Alerts</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/animations.html">Animations</a>
+                                <a href="pages/ui/animations.html">Animations</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/badges.html">Badges</a>
+                                <a href="pages/ui/badges.html">Badges</a>
                             </li>
 
                             <li>
-                                <a href="../../pages/ui/breadcrumbs.html">Breadcrumbs</a>
+                                <a href="pages/ui/breadcrumbs.html">Breadcrumbs</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/buttons.html">Buttons</a>
+                                <a href="pages/ui/buttons.html">Buttons</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/collapse.html">Collapse</a>
+                                <a href="pages/ui/collapse.html">Collapse</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/colors.html">Colors</a>
+                                <a href="pages/ui/colors.html">Colors</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/dialogs.html">Dialogs</a>
+                                <a href="pages/ui/dialogs.html">Dialogs</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/icons.html">Icons</a>
+                                <a href="pages/ui/icons.html">Icons</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/labels.html">Labels</a>
+                                <a href="pages/ui/labels.html">Labels</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/list-group.html">List Group</a>
+                                <a href="pages/ui/list-group.html">List Group</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/media-object.html">Media Object</a>
+                                <a href="pages/ui/media-object.html">Media Object</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/modals.html">Modals</a>
+                                <a href="pages/ui/modals.html">Modals</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/notifications.html">Notifications</a>
+                                <a href="pages/ui/notifications.html">Notifications</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/pagination.html">Pagination</a>
+                                <a href="pages/ui/pagination.html">Pagination</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/preloaders.html">Preloaders</a>
+                                <a href="pages/ui/preloaders.html">Preloaders</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/progressbars.html">Progress Bars</a>
+                                <a href="pages/ui/progressbars.html">Progress Bars</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/range-sliders.html">Range Sliders</a>
+                                <a href="pages/ui/range-sliders.html">Range Sliders</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/sortable-nestable.html">Sortable & Nestable</a>
+                                <a href="pages/ui/sortable-nestable.html">Sortable & Nestable</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/tabs.html">Tabs</a>
+                                <a href="pages/ui/tabs.html">Tabs</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/thumbnails.html">Thumbnails</a>
+                                <a href="pages/ui/thumbnails.html">Thumbnails</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/tooltips-popovers.html">Tooltips & Popovers</a>
+                                <a href="pages/ui/tooltips-popovers.html">Tooltips & Popovers</a>
                             </li>
                             <li>
-                                <a href="../../pages/ui/waves.html">Waves</a>
+                                <a href="pages/ui/waves.html">Waves</a>
                             </li>
                         </ul>
                     </li>
@@ -452,22 +450,22 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../../pages/forms/basic-form-elements.html">Basic Form Elements</a>
+                                <a href="pages/forms/basic-form-elements.html">Basic Form Elements</a>
                             </li>
                             <li>
-                                <a href="../../pages/forms/advanced-form-elements.html">Advanced Form Elements</a>
+                                <a href="pages/forms/advanced-form-elements.html">Advanced Form Elements</a>
                             </li>
                             <li>
-                                <a href="../../pages/forms/form-examples.html">Form Examples</a>
+                                <a href="pages/forms/form-examples.html">Form Examples</a>
                             </li>
                             <li>
-                                <a href="../../pages/forms/form-validation.html">Form Validation</a>
+                                <a href="pages/forms/form-validation.html">Form Validation</a>
                             </li>
                             <li>
-                                <a href="../../pages/forms/form-wizard.html">Form Wizard</a>
+                                <a href="pages/forms/form-wizard.html">Form Wizard</a>
                             </li>
                             <li>
-                                <a href="../../pages/forms/editors.html">Editors</a>
+                                <a href="pages/forms/editors.html">Editors</a>
                             </li>
                         </ul>
                     </li>
@@ -478,13 +476,13 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../../pages/tables/normal-tables.html">Normal Tables</a>
+                                <a href="pages/tables/normal-tables.html">Normal Tables</a>
                             </li>
                             <li>
-                                <a href="../../pages/tables/jquery-datatable.html">Jquery Datatables</a>
+                                <a href="pages/tables/jquery-datatable.html">Jquery Datatables</a>
                             </li>
                             <li>
-                                <a href="../../pages/tables/editable-table.html">Editable Tables</a>
+                                <a href="pages/tables/editable-table.html">Editable Tables</a>
                             </li>
                         </ul>
                     </li>
@@ -495,10 +493,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../../pages/medias/image-gallery.html">Image Gallery</a>
+                                <a href="pages/medias/image-gallery.html">Image Gallery</a>
                             </li>
                             <li>
-                                <a href="../../pages/medias/carousel.html">Carousel</a>
+                                <a href="pages/medias/carousel.html">Carousel</a>
                             </li>
                         </ul>
                     </li>
@@ -509,45 +507,45 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../../pages/charts/morris.html">Morris</a>
+                                <a href="pages/charts/morris.html">Morris</a>
                             </li>
                             <li>
-                                <a href="../../pages/charts/flot.html">Flot</a>
+                                <a href="pages/charts/flot.html">Flot</a>
                             </li>
                             <li>
-                                <a href="../../pages/charts/chartjs.html">ChartJS</a>
+                                <a href="pages/charts/chartjs.html">ChartJS</a>
                             </li>
                             <li>
-                                <a href="../../pages/charts/sparkline.html">Sparkline</a>
+                                <a href="pages/charts/sparkline.html">Sparkline</a>
                             </li>
                             <li>
-                                <a href="../../pages/charts/jquery-knob.html">Jquery Knob</a>
+                                <a href="pages/charts/jquery-knob.html">Jquery Knob</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">content_copy</i>
                             <span>Example Pages</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../../pages/examples/sign-in.html">Sign In</a>
+                                <a href="pages/examples/sign-in.html">Sign In</a>
                             </li>
                             <li>
-                                <a href="../../pages/examples/sign-up.html">Sign Up</a>
+                                <a href="pages/examples/sign-up.html">Sign Up</a>
                             </li>
                             <li>
-                                <a href="../../pages/examples/forgot-password.html">Forgot Password</a>
-                            </li>
-                            <li class="active">
-                                <a href="../../pages/examples/blank.html">Blank Page</a>
+                                <a href="pages/examples/forgot-password.html">Forgot Password</a>
                             </li>
                             <li>
-                                <a href="../../pages/examples/404.html">404 - Not Found</a>
+                                <a href="pages/examples/blank.html">Blank Page</a>
                             </li>
                             <li>
-                                <a href="../../pages/examples/500.html">500 - Server Error</a>
+                                <a href="pages/examples/404.html">404 - Not Found</a>
+                            </li>
+                            <li>
+                                <a href="pages/examples/500.html">500 - Server Error</a>
                             </li>
                         </ul>
                     </li>
@@ -558,13 +556,13 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../../pages/maps/google.html">Google Map</a>
+                                <a href="pages/maps/google.html">Google Map</a>
                             </li>
                             <li>
-                                <a href="../../pages/maps/yandex.html">YandexMap</a>
+                                <a href="pages/maps/yandex.html">YandexMap</a>
                             </li>
                             <li>
-                                <a href="../../pages/maps/jvectormap.html">jVectorMap</a>
+                                <a href="pages/maps/jvectormap.html">jVectorMap</a>
                             </li>
                         </ul>
                     </li>
@@ -611,7 +609,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="../changelogs.html">
+                        <a href="pages/changelogs.html">
                             <i class="material-icons">update</i>
                             <span>Changelogs</span>
                         </a>
@@ -635,6 +633,7 @@
                             <span>Information</span>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </div>
             <!-- #Menu -->
@@ -650,9 +649,6 @@
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->
-        @endif
-        @include('theme.backend.layouts.rightsidebar')
-        @if(0)
         <!-- Right Sidebar -->
         <aside id="rightsidebar" class="right-sidebar">
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
@@ -796,11 +792,319 @@
             </div>
         </aside>
         <!-- #END# Right Sidebar -->
-        @endif
     </section>
 
-    @yield('content')
-    
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>DASHBOARD</h2>
+            </div>
+
+            <!-- Widgets -->
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-pink hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">playlist_add_check</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">NEW TASKS</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-cyan hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">help</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">NEW TICKETS</div>
+                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-light-green hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">forum</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">NEW COMMENTS</div>
+                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-orange hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">person_add</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">NEW VISITORS</div>
+                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Widgets -->
+            <!-- CPU Usage -->
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <div class="row clearfix">
+                                <div class="col-xs-12 col-sm-6">
+                                    <h2>CPU USAGE (%)</h2>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 align-right">
+                                    <div class="switch panel-switch-btn">
+                                        <span class="m-r-10 font-12">REAL TIME</span>
+                                        <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div id="real_time_chart" class="dashboard-flot-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# CPU Usage -->
+            <div class="row clearfix">
+                <!-- Visitors -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="body bg-pink">
+                            <div class="sparkline" data-type="line" data-spot-Radius="4" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#fff"
+                                 data-min-Spot-Color="rgb(255,255,255)" data-max-Spot-Color="rgb(255,255,255)" data-spot-Color="rgb(255,255,255)"
+                                 data-offset="90" data-width="100%" data-height="92px" data-line-Width="2" data-line-Color="rgba(255,255,255,0.7)"
+                                 data-fill-Color="rgba(0, 188, 212, 0)">
+                                12,10,9,6,5,6,10,5,7,5,12,13,7,12,11
+                            </div>
+                            <ul class="dashboard-stat-list">
+                                <li>
+                                    TODAY
+                                    <span class="pull-right"><b>1 200</b> <small>USERS</small></span>
+                                </li>
+                                <li>
+                                    YESTERDAY
+                                    <span class="pull-right"><b>3 872</b> <small>USERS</small></span>
+                                </li>
+                                <li>
+                                    LAST WEEK
+                                    <span class="pull-right"><b>26 582</b> <small>USERS</small></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Visitors -->
+                <!-- Latest Social Trends -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="body bg-cyan">
+                            <div class="m-b--35 font-bold">LATEST SOCIAL TRENDS</div>
+                            <ul class="dashboard-stat-list">
+                                <li>
+                                    #socialtrends
+                                    <span class="pull-right">
+                                        <i class="material-icons">trending_up</i>
+                                    </span>
+                                </li>
+                                <li>
+                                    #materialdesign
+                                    <span class="pull-right">
+                                        <i class="material-icons">trending_up</i>
+                                    </span>
+                                </li>
+                                <li>#adminbsb</li>
+                                <li>#freeadmintemplate</li>
+                                <li>#bootstraptemplate</li>
+                                <li>
+                                    #freehtmltemplate
+                                    <span class="pull-right">
+                                        <i class="material-icons">trending_up</i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Latest Social Trends -->
+                <!-- Answered Tickets -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="body bg-teal">
+                            <div class="font-bold m-b--35">ANSWERED TICKETS</div>
+                            <ul class="dashboard-stat-list">
+                                <li>
+                                    TODAY
+                                    <span class="pull-right"><b>12</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    YESTERDAY
+                                    <span class="pull-right"><b>15</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    LAST WEEK
+                                    <span class="pull-right"><b>90</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    LAST MONTH
+                                    <span class="pull-right"><b>342</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    LAST YEAR
+                                    <span class="pull-right"><b>4 225</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    ALL
+                                    <span class="pull-right"><b>8 752</b> <small>TICKETS</small></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Answered Tickets -->
+            </div>
+
+            <div class="row clearfix">
+                <!-- Task Info -->
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="card">
+                        <div class="header">
+                            <h2>TASK INFOS</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-hover dashboard-task-infos">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Task</th>
+                                            <th>Status</th>
+                                            <th>Manager</th>
+                                            <th>Progress</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Task A</td>
+                                            <td><span class="label bg-green">Doing</span></td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Task B</td>
+                                            <td><span class="label bg-blue">To Do</span></td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Task C</td>
+                                            <td><span class="label bg-light-blue">On Hold</span></td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-light-blue" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Task D</td>
+                                            <td><span class="label bg-orange">Wait Approvel</span></td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Task E</td>
+                                            <td>
+                                                <span class="label bg-red">Suspended</span>
+                                            </td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Task Info -->
+                <!-- Browser Usage -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="header">
+                            <h2>BROWSER USAGE</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div id="donut_chart" class="dashboard-donut-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Browser Usage -->
+            </div>
+        </div>
+    </section>
 
     <!-- Jquery Core Js -->
     <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/jquery/jquery.min.js') }}"></script>
@@ -817,12 +1121,29 @@
     <!-- Waves Effect Plugin Js -->
     <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/node-waves/waves.js') }}"></script>
 
-    @yield('pageLevelPluginJS')
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/jquery-countto/jquery.countTo.js') }}"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/morrisjs/morris.js') }}"></script>
+
+    <!-- ChartJs -->
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/chartjs/Chart.bundle.js') }}"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.js') }}"></script>
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.resize.js') }}"></script>
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.pie.js') }}"></script>
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.categories.js') }}"></script>
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.time.js') }}"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/jquery-sparkline/jquery.sparkline.js') }}"></script>
 
     <!-- Custom Js -->
     <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/js/admin.js') }}"></script>
-
-    @yield('pageLevelJS')
+    <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/js/pages/index.js') }}"></script>
 
     <!-- Demo Js -->
     <script src="{{ asset('theme/backend/AdminBSBMaterialDesign/js/demo.js') }}"></script>
