@@ -63,6 +63,13 @@ Route::group(
     ],
     function()
     {
+    	// blank START
+    	Route::get('/blank',function()
+        {
+        	return view('theme.backend.pages.blank',[ 'menu' => "blank", 'submenu' => 'blank' ]);
+        });
+    	// blank END
+    	
     	// dashboard START
     	Route::get('/',function()
         {
