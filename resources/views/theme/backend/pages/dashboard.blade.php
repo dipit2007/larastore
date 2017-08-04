@@ -306,6 +306,7 @@
                             <span>Home</span>
                         </a>
                     </li>
+                    @if(0)
                     <li>
                         <a href="pages/typography.html">
                             <i class="material-icons">text_fields</i>
@@ -632,6 +633,7 @@
                             <span>Information</span>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </div>
             <!-- #Menu -->

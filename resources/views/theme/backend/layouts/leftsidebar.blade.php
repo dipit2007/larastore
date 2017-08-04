@@ -3,11 +3,11 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="../../images/user.png" width="48" height="48" alt="User" />
+                    <img src="{{ asset('theme/backend/AdminBSBMaterialDesign/images/user.png') }}" width="48" height="48" alt="User Profile Icon Image" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</div>
+                    <div class="email">{{ Auth::user()->email }}</div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -27,12 +27,14 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li>
+                    <li class="active">
                         <a href="../../index.html">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
                     </li>
+                    
+                    @if(0)
                     <li>
                         <a href="../../pages/typography.html">
                             <i class="material-icons">text_fields</i>
@@ -359,17 +361,20 @@
                             <span>Information</span>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </div>
             <!-- #Menu -->
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                    &copy; 2016 - <?php print date('Y') ?> <a href="javascript:void(0);">company Name </a>.
                 </div>
+                @if(0)
                 <div class="version">
                     <b>Version: </b> 1.0.5
                 </div>
+                @endif
             </div>
             <!-- #Footer -->
         </aside>
