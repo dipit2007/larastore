@@ -18,3 +18,41 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Frondend Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register Frondend routes for your application. 
+|
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Backend Admin Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register Backend Admin routes for your application. 
+|
+*/
+
+
+
