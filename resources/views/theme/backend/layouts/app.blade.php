@@ -267,6 +267,8 @@
     </nav>
     <!-- #Top Bar -->
     <section>
+        @include('theme.backend.layouts.leftsidebar')
+        @if(0)
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
@@ -643,6 +645,9 @@
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->
+        @endif
+        @include('theme.backend.layouts.rightsidebar')
+        @if(0)
         <!-- Right Sidebar -->
         <aside id="rightsidebar" class="right-sidebar">
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
@@ -786,6 +791,7 @@
             </div>
         </aside>
         <!-- #END# Right Sidebar -->
+        @endif
     </section>
 
     <section class="content">
