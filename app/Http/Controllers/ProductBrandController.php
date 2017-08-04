@@ -123,4 +123,16 @@ class ProductBrandController extends Controller
     {
         //
     }
+    public function datatable()
+    {
+        $statuses = [ 0 => "Disabled", 1 => "Active"];
+
+        $zones = ProductBrand::with(['user']);//->select();
+
+        return Datatables::of($zones)
+        ->addColumn('delete', function($data){ return '<a href="'.URL::route('admin.brand.destroy',$data->id).'">Delete</a>'; })
+        //->editColumn('zone_status_id', '{{ $zone_status_id }}')
+        ->editColumn('status',function ($zone) { return $zone->status; } )
+        ->make(true);
+    }
 }
