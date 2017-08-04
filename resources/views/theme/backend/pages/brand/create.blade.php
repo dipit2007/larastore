@@ -27,7 +27,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="{{ route('admin.brand.create') }}">Add Brand</a></li>
+                                        <li><a href="{{ route('admin.brand.index') }}">Brand List</a></li>
                                         @if(0)
                                         <li><a href="javascript:void(0);">Another action</a></li>
                                         <li><a href="javascript:void(0);">Something else here</a></li>

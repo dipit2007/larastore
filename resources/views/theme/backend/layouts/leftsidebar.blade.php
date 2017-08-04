@@ -28,7 +28,7 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li @if($menu == "dashboard") class="active" @endif>
-                        <a href="../../index.html">
+                        <a href="/backend">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>

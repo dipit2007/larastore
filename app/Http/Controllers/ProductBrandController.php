@@ -14,7 +14,16 @@ class ProductBrandController extends Controller
      */
     public function index()
     {
-        return view('theme.backend.pages.brand.list',[ 'menu' => "brand", 'submenu' => 'brandlist' ]);
+        $data['menu'] = "brand";
+        $data['submenu'] = "brandlist";
+
+        $data['pageTitle'] = "BRAND";
+        $data['smallPageTitle'] = "";
+        
+        $data['contentCardHeaderTitle'] = "BRAND LIST";
+
+
+        return view('theme.backend.pages.brand.list', $data );
     }
 
     /**
@@ -24,7 +33,15 @@ class ProductBrandController extends Controller
      */
     public function create()
     {
-        return view('theme.backend.pages.brand.list',[ 'menu' => "brand", 'submenu' => 'brandcreate' ]);
+        $data['menu'] = "brand";
+        $data['submenu'] = "brandcreate";
+
+        $data['pageTitle'] = "BRAND";
+        $data['smallPageTitle'] = "";
+
+        $data['contentCardHeaderTitle'] = "CREATE BRAND";
+
+        return view('theme.backend.pages.brand.create', $data );
     }
 
     /**
