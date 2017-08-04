@@ -65,9 +65,10 @@ Route::group(
     {
     	// dashboard START
     	Route::get('/',function()
-        {   
-            return view('theme.backend.dashboard',['menu' => "dashboard", 'submenu' => 'dashboard']);
+        {
+        	return view('theme.backend.pages.dashboard',[ 'menu' => "dashboard", 'submenu' => 'dashboard' ]);
         });
     	// dashboard END
     }
 );
+
