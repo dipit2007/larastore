@@ -28,7 +28,7 @@
     <link href="{{ asset('theme/backend/AdminBSBMaterialDesign/css/themes/all-themes.css') }}" rel="stylesheet" />
 </head>
 
-<body class="theme-red">
+<body class="theme-teal">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
