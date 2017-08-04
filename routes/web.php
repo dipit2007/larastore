@@ -63,6 +63,11 @@ Route::group(
     ],
     function()
     {
-
+    	// dashboard START
+    	Route::get('/',function()
+        {   
+            return view('theme.backend.dashboard',['menu' => "dashboard", 'submenu' => 'dashboard']);
+        });
+    	// dashboard END
     }
 );
