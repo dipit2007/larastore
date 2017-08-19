@@ -39,6 +39,13 @@
                             <span>Brand</span>
                         </a>
                     </li>
+
+                    <li @if($menu == "category") class="active" @endif>
+                        <a href="{{ route('admin.category.index') }}">
+                            <i class="material-icons">text_fields</i>
+                            <span>Category</span>
+                        </a>
+                    </li>
                     
                     @if(0)
                     <li>
