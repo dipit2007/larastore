@@ -14,7 +14,16 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $data['menu'] = "product";
+        $data['submenu'] = "productlist";
+
+        $data['pageTitle'] = "PRODUCT";
+        $data['smallPageTitle'] = "";
+        
+        $data['contentCardHeaderTitle'] = "PRODUCT LIST";
+
+
+        return view('theme.backend.pages.product.list', $data );
     }
 
     /**
@@ -24,7 +33,15 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $data['menu'] = "product";
+        $data['submenu'] = "productcreate";
+
+        $data['pageTitle'] = "PRODUCT";
+        $data['smallPageTitle'] = "";
+
+        $data['contentCardHeaderTitle'] = "CREATE PRODUCT";
+
+        return view('theme.backend.pages.product.create', $data );
     }
 
     /**
@@ -35,7 +52,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:100',
+            'description' => 'required|max:255',
+            //'status' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('admin.product.create'))
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        $product = new Product;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->status = 1;
+        $product->save();
+
+        return redirect(route('admin.product.index'));
     }
 
     /**
@@ -81,5 +116,17 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+    public function datatable()
+    {
+        $statuses = [ 0 => "Disabled", 1 => "Active"];
+
+        $zones = Product::with(['user']);//->select();
+
+        return Datatables::of($zones)
+        ->addColumn('delete', function($data){ return '<a href="'.URL::route('admin.product.destroy',$data->id).'">Delete</a>'; })
+        //->editColumn('zone_status_id', '{{ $zone_status_id }}')
+        ->editColumn('status',function ($zone) { return $zone->status; } )
+        ->make(true);
     }
 }

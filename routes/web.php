@@ -116,6 +116,26 @@ Route::group(
             ]
         ]);
         // CATEGORY END 
+
+        // CATEGORY START 
+
+        Route::get('product/datatable', [ 'as' => 'admin.product.datatable', 'uses' => 'ProductController@datatable']);
+        Route::resource('product','ProductController', [
+            'names' => [
+                'index' => 'admin.product.index',
+                'create' => 'admin.product.create',
+                'store' => 'admin.product.store',
+                'show' => 'admin.product.show',
+                'edit' => 'admin.product.edit',
+                'update' => 'admin.product.update',
+                'destroy' => 'admin.product.destroy',
+            ],
+
+            'parameters' => [
+                'id' => 'id'
+            ]
+        ]);
+        // CATEGORY END 
     }
 );
 
