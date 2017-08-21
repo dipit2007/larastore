@@ -27,7 +27,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="{{ route('admin.category.index') }}">Category List</a></li>
+                                        <li><a href="{{ route('admin.product.index') }}">Category List</a></li>
                                         @if(0)
                                         <li><a href="javascript:void(0);">Another action</a></li>
                                         <li><a href="javascript:void(0);">Something else here</a></li>
@@ -37,18 +37,18 @@
                             </ul>
                         </div>
                         <div class="body">                            
-                            {!! Form::open(array('route' => array('admin.category.store') )) !!}
-                                <label for="category_name">Name</label>
+                            {!! Form::open(array('route' => array('admin.product.store') )) !!}
+                                <label for="product_name">Name</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="name" id="category_name" class="form-control" placeholder="Enter category name">
+                                        <input type="text" name="name" id="product_name" class="form-control" placeholder="Enter product name">
                                     </div>
                                 </div>
 
-                                <label for="category_description">Desciption</label>
+                                <label for="product_description">Desciption</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="description" id="category_description" class="form-control" placeholder="Enter category description">
+                                        <input type="text" name="description" id="product_description" class="form-control" placeholder="Enter product description">
                                     </div>
                                 </div>
                                 
