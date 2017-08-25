@@ -51,6 +51,24 @@
                                         <input type="text" name="description" id="product_description" class="form-control" placeholder="Enter product description">
                                     </div>
                                 </div>
+
+                                <div class="col-md-12">
+                                    <p>
+                                        <b>Brand</b>
+                                    </p>
+                                    {!! Form::select('brand', $brandList, $selectedBrand, ['class' => 'form-control show-tick', 'data-live-search' => "true"]) !!}
+                                    
+
+                                </div>
+
+                                <div class="col-md-12">
+                                    <p>
+                                        <b>Category</b>
+                                    </p>
+                                    {!! Form::select('category', $categoryList, $selectedCategory, ['class' => 'form-control show-tick', 'data-live-search' => "true"]) !!}
+                                    
+
+                                </div>
                                 
                                 <br>
                                 <button type="submit" class="btn bg-teal btn-lg waves-effect">
@@ -72,6 +90,14 @@
     @section('pageLevelPluginCSS')
     <!-- JQuery DataTable Css -->
     <link href="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet" />
+    
+
+    <!-- Multi Select Css -->
+    <link href="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/multi-select/css/multi-select.css') }}" rel="stylesheet" />
+
+    <!-- Multi Select Css -->
+    <link href="{{ asset('theme/backend/AdminBSBMaterialDesign/plugins/bootstrap-select/css/bootstrap-select.css') }}" rel="stylesheet" />
+
     @endsection
     
 

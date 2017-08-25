@@ -5,6 +5,16 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 
+use App\ProductBrand;
+use App\ProductCategory;
+
+use Validator;
+
+use Yajra\Datatables\Datatables;
+
+use URL;
+
+
 class ProductController extends Controller
 {
     /**
@@ -41,6 +51,19 @@ class ProductController extends Controller
 
         $data['contentCardHeaderTitle'] = "CREATE PRODUCT";
 
+        $brandList = ProductBrand::pluck('description', 'id');
+        $selectedBrand = 1;
+
+        $data['brandList'] = $brandList;
+        $data['selectedBrand'] = $selectedBrand;
+
+        $categoryList = ProductCategory::pluck('description', 'id');
+        $selectedCategory = 1;
+
+        $data['categoryList'] = $categoryList;
+        $data['selectedCategory'] = $selectedCategory;
+
+
         return view('theme.backend.pages.product.create', $data );
     }
 
@@ -55,11 +78,12 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:100',
             'description' => 'required|max:255',
-            //'status' => 'required',
+            'brand' => 'required',
+            'category' => 'required',
         ]);
 
         if ($validator->fails()) {
-            return redirect(route('admin.product.create'))
+            return redirect(route('product.create'))
                 ->withInput()
                 ->withErrors($validator);
         }
@@ -67,7 +91,9 @@ class ProductController extends Controller
         $product = new Product;
         $product->name = $request->name;
         $product->description = $request->description;
-        $product->status = 1;
+        $product->product_brand_id = $request->brand;
+        $product->product_category_id = $request->category;
+        $product->product_status_id = 1;
         $product->save();
 
         return redirect(route('admin.product.index'));
@@ -126,7 +152,7 @@ class ProductController extends Controller
         return Datatables::of($zones)
         ->addColumn('delete', function($data){ return '<a href="'.URL::route('admin.product.destroy',$data->id).'">Delete</a>'; })
         //->editColumn('zone_status_id', '{{ $zone_status_id }}')
-        ->editColumn('status',function ($zone) { return $zone->status; } )
+        //->editColumn('status',function ($zone) { return $zone->status; } )
         ->make(true);
     }
 }
