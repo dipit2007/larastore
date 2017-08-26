@@ -147,12 +147,13 @@ class ProductController extends Controller
     {
         $statuses = [ 0 => "Disabled", 1 => "Active"];
 
-        $zones = Product::with(['user']);//->select();
+        $products = Product::with(['user']);
 
-        return Datatables::of($zones)
+        return Datatables::of($products)
         ->addColumn('delete', function($data){ return '<a href="'.URL::route('admin.product.destroy',$data->id).'">Delete</a>'; })
         //->editColumn('zone_status_id', '{{ $zone_status_id }}')
-        //->editColumn('status',function ($zone) { return $zone->status; } )
+        ->addColumn('status',function ($product) { return $product->status->name; } )
+        //->editColumn('status',function ($product) { return $product->status->name; } )
         ->make(true);
     }
 }
