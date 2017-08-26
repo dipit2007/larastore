@@ -5,6 +5,17 @@ namespace App\Http\Controllers;
 use App\ProductVariant;
 use Illuminate\Http\Request;
 
+use App\Product;
+
+use App\ProductBrand;
+use App\ProductCategory;
+
+use Validator;
+
+use Yajra\Datatables\Datatables;
+
+use URL;
+
 class ProductVariantController extends Controller
 {
     /**
@@ -14,7 +25,16 @@ class ProductVariantController extends Controller
      */
     public function index()
     {
-        //
+        $data['menu'] = "productvariant";
+        $data['submenu'] = "productvariantlist";
+
+        $data['pageTitle'] = "PRODUCT";
+        $data['smallPageTitle'] = "";
+        
+        $data['contentCardHeaderTitle'] = "PRODUCT VARIANT LIST";
+
+
+        return view('theme.backend.pages.product.variant.list', $data );
     }
 
     /**
@@ -24,7 +44,21 @@ class ProductVariantController extends Controller
      */
     public function create()
     {
-        //
+        $data['menu'] = "productvariant";
+        $data['submenu'] = "productvariantcreate";
+
+        $data['pageTitle'] = "PRODUCT";
+        $data['smallPageTitle'] = "";
+
+        $data['contentCardHeaderTitle'] = "CREATE PRODUCT VARIANT";
+
+        $productList = Product::pluck('name', 'id');
+        $selectedProduct = 1;
+
+        $data['productList'] = $productList;
+        $data['selectedProduct'] = $selectedProduct;
+
+        return view('theme.backend.pages.product.variant.create', $data );
     }
 
     /**
@@ -35,7 +69,41 @@ class ProductVariantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:50',
+            'description' => 'required|max:255',
+            'product' => 'required',
+            //'status' => 'required',
+            'sku' => 'required',
+            'price' => 'required',
+            'tax' => 'required',
+            'shipping' => 'required',
+            'currency' => 'required',
+            'quantity' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('admin.product.variant.create'))
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        $productvariant = new ProductVariant;
+        
+        $productvariant->product_id = $request->product;
+        $productvariant->sku = $request->sku;
+        $productvariant->price = $request->price;
+        $productvariant->tax = $request->tax;
+        $productvariant->shipping = $request->shipping;
+        $productvariant->currency = $request->currency;
+        $productvariant->quantity = $request->quantity;
+
+        $productvariant->name = $request->name;
+        $productvariant->description = $request->description;
+        //$productvariant->product_variant_status_id = $request->status;
+        $productvariant->save();
+
+        return redirect(route('admin.product.variant.index'));
     }
 
     /**
@@ -81,5 +149,18 @@ class ProductVariantController extends Controller
     public function destroy(ProductVariant $productVariant)
     {
         //
+    }
+    public function datatable()
+    {
+        $statuses = [ 0 => "Disabled", 1 => "Active"];
+
+        $productvariants = ProductVariant::with(['user']);
+
+        return Datatables::of($productvariants)
+        ->addColumn('delete', function($data){ return '<a href="'.URL::route('admin.product.variant.destroy',$data->id).'">Delete</a>'; })
+        //->editColumn('zone_status_id', '{{ $zone_status_id }}')
+        //->addColumn('status',function ($product) { return $product->status->name; } )
+        //->editColumn('status',function ($product) { return $product->status->name; } )
+        ->make(true);
     }
 }

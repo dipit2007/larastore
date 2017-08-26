@@ -179,23 +179,23 @@ Route::group(
 
         // PRODUCT VARIANT
 
-        Route::get('productattributevalue/datatable', [ 'as' => 'admin.product.attribute.value.datatable', 'uses' => 'ProductAttributeValueController@datatable']);
-        Route::resource('productattributevalue','ProductAttributeValueController', [
+        Route::get('productvariant/datatable', [ 'as' => 'admin.product.variant.datatable', 'uses' => 'ProductVariantController@datatable']);
+        Route::resource('productvariant','ProductVariantController', [
             'names' => [
-                'index' => 'admin.product.attribute.value.index',
-                'create' => 'admin.product.attribute.value.create',
-                'store' => 'admin.product.attribute.value.store',
-                'show' => 'admin.product.attribute.value.show',
-                'edit' => 'admin.product.attribute.value.edit',
-                'update' => 'admin.product.attribute.value.update',
-                'destroy' => 'admin.product.attribute.value.destroy',
+                'index' => 'admin.product.variant.index',
+                'create' => 'admin.product.variant.create',
+                'store' => 'admin.product.variant.store',
+                'show' => 'admin.product.variant.show',
+                'edit' => 'admin.product.variant.edit',
+                'update' => 'admin.product.variant.update',
+                'destroy' => 'admin.product.variant.destroy',
             ],
 
             'parameters' => [
                 'id' => 'id'
             ]
         ]);
-        // PRODUCT ATTRIBUTE VALUE END 
+        // PRODUCT VARIANT END 
     }
 );
 

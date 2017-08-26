@@ -27,7 +27,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="{{ route('admin.product.attribute.index') }}">Product Attribute List</a></li>
+                                        <li><a href="{{ route('admin.product.variant.index') }}">Product Variant List</a></li>
                                         @if(0)
                                         <li><a href="javascript:void(0);">Another action</a></li>
                                         <li><a href="javascript:void(0);">Something else here</a></li>
@@ -37,7 +37,7 @@
                             </ul>
                         </div>
                         <div class="body">                            
-                            {!! Form::open(array('route' => array('admin.product.attribute.store') )) !!}
+                            {!! Form::open(array('route' => array('admin.product.variant.store') )) !!}
                                 
                                 <div class="col-md-12">
                                     <p>
@@ -48,17 +48,59 @@
 
                                 </div>
 
+                                <label for="product_variant_sku">SKU</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="sku" id="product_variant_sku" class="form-control" placeholder="Enter product Variant SKU">
+                                    </div>
+                                </div>
+
+                                <label for="product_variant_price">Price</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="price" id="product_variant_price" class="form-control" placeholder="Enter product Variant Price">
+                                    </div>
+                                </div>
+
+                                <label for="product_variant_tax">Tax</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="tax" id="product_variant_tax" class="form-control" placeholder="Enter product Variant Tax">
+                                    </div>
+                                </div>
+
+                                <label for="product_variant_shipping">Shipping</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="shipping" id="product_variant_shipping" class="form-control" placeholder="Enter product Variant Shipping">
+                                    </div>
+                                </div>
+
+                                <label for="product_variant_currency">Currency</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="currency" id="product_variant_currency" class="form-control" placeholder="Enter product Variant Currency">
+                                    </div>
+                                </div>
+
+                                <label for="product_variant_quantity">Quantity</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="quantity" id="product_variant_quantity" class="form-control" placeholder="Enter product Variant Quantity">
+                                    </div>
+                                </div>
+
                                 <label for="product_name">Name</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="name" id="product_attribute_name" class="form-control" placeholder="Enter product Attribute name">
+                                        <input type="text" name="name" id="product_attribute_name" class="form-control" placeholder="Enter product Variant name">
                                     </div>
                                 </div>
 
                                 <label for="product_description">Desciption</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="description" id="product_attribute_description" class="form-control" placeholder="Enter product Attribute description">
+                                        <input type="text" name="description" id="product_attribute_description" class="form-control" placeholder="Enter product Variant description">
                                     </div>
                                 </div>
 

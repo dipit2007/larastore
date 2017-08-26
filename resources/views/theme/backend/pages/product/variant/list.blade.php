@@ -31,7 +31,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="{{ route('admin.product.attribute.create') }}">Add Product Attribute</a></li>
+                                        <li><a href="{{ route('admin.product.variant.create') }}">Add Product Variant</a></li>
                                         @if(0)
                                         <li><a href="javascript:void(0);">Another action</a></li>
                                         <li><a href="javascript:void(0);">Something else here</a></li>
@@ -48,6 +48,9 @@
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Description</th>
+                                            <th>SKU</th>
+                                            <th>Price</th>
+                                            <th>Tax</th>
                                             <th>Created At</th>
                                             <th>Created By</th>
                                             <th>Status</th>
@@ -111,12 +114,15 @@
             "ordering":  false,
             "processing": true,
             "serverSide": true,                    
-            "ajax": "{{ route('admin.product.attribute.datatable') }}",
+            "ajax": "{{ route('admin.product.variant.datatable') }}",
             "columns": [
             
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
             { data: 'description', name: 'description' },
+            { data: 'sku', name: 'sku' },
+            { data: 'price', name: 'price' },
+            { data: 'tax', name: 'tax' },
             { data: 'created_at', name: 'created_at' },
             { data: 'user.name', name: 'user.name' },
             { data: 'status', name: 'status' },
