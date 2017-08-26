@@ -156,6 +156,46 @@ Route::group(
             ]
         ]);
         // PRODUCT ATTRIBUTE END 
+
+        // PRODUCT ATTRIBUTE VALUE START 
+
+        Route::get('productattributevalue/datatable', [ 'as' => 'admin.product.attribute.value.datatable', 'uses' => 'ProductAttributeValueController@datatable']);
+        Route::resource('productattributevalue','ProductAttributeValueController', [
+            'names' => [
+                'index' => 'admin.product.attribute.value.index',
+                'create' => 'admin.product.attribute.value.create',
+                'store' => 'admin.product.attribute.value.store',
+                'show' => 'admin.product.attribute.value.show',
+                'edit' => 'admin.product.attribute.value.edit',
+                'update' => 'admin.product.attribute.value.update',
+                'destroy' => 'admin.product.attribute.value.destroy',
+            ],
+
+            'parameters' => [
+                'id' => 'id'
+            ]
+        ]);
+        // PRODUCT ATTRIBUTE VALUE END 
+
+        // PRODUCT VARIANT
+
+        Route::get('productattributevalue/datatable', [ 'as' => 'admin.product.attribute.value.datatable', 'uses' => 'ProductAttributeValueController@datatable']);
+        Route::resource('productattributevalue','ProductAttributeValueController', [
+            'names' => [
+                'index' => 'admin.product.attribute.value.index',
+                'create' => 'admin.product.attribute.value.create',
+                'store' => 'admin.product.attribute.value.store',
+                'show' => 'admin.product.attribute.value.show',
+                'edit' => 'admin.product.attribute.value.edit',
+                'update' => 'admin.product.attribute.value.update',
+                'destroy' => 'admin.product.attribute.value.destroy',
+            ],
+
+            'parameters' => [
+                'id' => 'id'
+            ]
+        ]);
+        // PRODUCT ATTRIBUTE VALUE END 
     }
 );
 

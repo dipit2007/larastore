@@ -60,6 +60,20 @@
                             <span>Product Attribute</span>
                         </a>
                     </li>
+
+                    <li @if($menu == "productattributevalue") class="active" @endif>
+                        <a href="{{ route('admin.product.attribute.value.index') }}">
+                            <i class="material-icons">text_fields</i>
+                            <span>Product Attribute Value</span>
+                        </a>
+                    </li>
+
+                    <li @if($menu == "productvariant") class="active" @endif>
+                        <a href="{{ route('admin.product.variant.index') }}">
+                            <i class="material-icons">text_fields</i>
+                            <span>Product Variant</span>
+                        </a>
+                    </li>
                     
                     @if(0)
                     <li>
