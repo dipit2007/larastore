@@ -53,6 +53,13 @@
                             <span>Product</span>
                         </a>
                     </li>
+
+                    <li @if($menu == "productattribute") class="active" @endif>
+                        <a href="{{ route('admin.product.attribute.index') }}">
+                            <i class="material-icons">text_fields</i>
+                            <span>Product Attribute</span>
+                        </a>
+                    </li>
                     
                     @if(0)
                     <li>

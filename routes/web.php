@@ -117,7 +117,7 @@ Route::group(
         ]);
         // CATEGORY END 
 
-        // CATEGORY START 
+        // PRODUCT START 
 
         Route::get('product/datatable', [ 'as' => 'admin.product.datatable', 'uses' => 'ProductController@datatable']);
         Route::resource('product','ProductController', [
@@ -135,7 +135,27 @@ Route::group(
                 'id' => 'id'
             ]
         ]);
-        // CATEGORY END 
+        // PRODUCT END 
+
+        // PRODUCT ATTRIBUTE START 
+
+        Route::get('productattribute/datatable', [ 'as' => 'admin.product.attribute.datatable', 'uses' => 'ProductAttributeController@datatable']);
+        Route::resource('productattribute','ProductAttributeController', [
+            'names' => [
+                'index' => 'admin.product.attribute.index',
+                'create' => 'admin.product.attribute.create',
+                'store' => 'admin.product.attribute.store',
+                'show' => 'admin.product.attribute.show',
+                'edit' => 'admin.product.attribute.edit',
+                'update' => 'admin.product.attribute.update',
+                'destroy' => 'admin.product.attribute.destroy',
+            ],
+
+            'parameters' => [
+                'id' => 'id'
+            ]
+        ]);
+        // PRODUCT ATTRIBUTE END 
     }
 );
 
