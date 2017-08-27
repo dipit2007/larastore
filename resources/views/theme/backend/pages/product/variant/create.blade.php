@@ -48,6 +48,27 @@
 
                                 </div>
 
+
+                                <div class="col-md-12">
+                                    <p>
+                                        <b>Product Attribute</b>
+                                    </p>
+                                    {!! Form::select('productattribute', $productattributeList, $selectedProductAttribute, ['class' => 'form-control show-tick', 'data-live-search' => "true"]) !!}
+                                    
+
+                                </div>
+
+                                <div class="col-md-12">
+                                    <p>
+                                        <b>Product Attribute Value</b>
+                                    </p>
+                                    {!! Form::select('productattributevalue', $productattributevalueList, $selectedProductAttributeValue, ['class' => 'form-control show-tick', 'data-live-search' => "true"]) !!}
+                                    
+
+                                </div>
+
+
+
                                 <label for="product_variant_sku">SKU</label>
                                 <div class="form-group">
                                     <div class="form-line">

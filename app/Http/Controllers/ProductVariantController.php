@@ -10,6 +10,12 @@ use App\Product;
 use App\ProductBrand;
 use App\ProductCategory;
 
+
+use App\ProductAttribute;
+use App\ProductAttributeValue;
+
+use App\ProductVariantAttributeValue;
+
 use Validator;
 
 use Yajra\Datatables\Datatables;
@@ -58,6 +64,18 @@ class ProductVariantController extends Controller
         $data['productList'] = $productList;
         $data['selectedProduct'] = $selectedProduct;
 
+        $productattributeList = ProductAttribute::pluck('name', 'id');
+        $selectedProductAttribute = 1;
+
+        $data['productattributeList'] = $productattributeList;
+        $data['selectedProductAttribute'] = $selectedProductAttribute;
+
+        $productattributevalueList = ProductAttributeValue::pluck('attributevalue', 'id');
+        $selectedProductAttributeValue = 1;
+
+        $data['productattributevalueList'] = $productattributevalueList;
+        $data['selectedProductAttributeValue'] = $selectedProductAttributeValue;
+
         return view('theme.backend.pages.product.variant.create', $data );
     }
 
@@ -69,6 +87,8 @@ class ProductVariantController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:50',
             'description' => 'required|max:255',
@@ -102,6 +122,17 @@ class ProductVariantController extends Controller
         $productvariant->description = $request->description;
         //$productvariant->product_variant_status_id = $request->status;
         $productvariant->save();
+
+
+        $productvariantattributevalue = new ProductVariantAttributeValue;
+        
+        $productvariantattributevalue->product_sku = $request->sku;
+        $productvariantattributevalue->product_attribute_id = $request->productattribute;
+        $productvariantattributevalue->product_attribute_value_id = $request->productattributevalue;
+
+        $productvariantattributevalue->save();
+
+
 
         return redirect(route('admin.product.variant.index'));
     }
