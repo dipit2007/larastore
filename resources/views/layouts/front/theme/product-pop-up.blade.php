@@ -4,12 +4,12 @@
               <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-3">
                   <div class="product-main-image">
-                    <img src="{{ asset('assets/pages/img/products/model7.jpg') }}" alt="Cool green dress with red bell" class="img-responsive">
+                    <img src="{{ asset('theme/frontend/assets/pages/img/products/model7.jpg') }}" alt="Cool green dress with red bell" class="img-responsive">
                   </div>
                   <div class="product-other-images">
-                    <a href="javascript:;" class="active"><img alt="Berry Lace Dress" src="{{ asset('assets/pages/img/products/model3.jpg') }}"></a>
-                    <a href="javascript:;"><img alt="Berry Lace Dress" src="{{ asset('assets/pages/img/products/model4.jpg') }}"></a>
-                    <a href="javascript:;"><img alt="Berry Lace Dress" src="{{ asset('assets/pages/img/products/model5.jpg') }}"></a>
+                    <a href="javascript:;" class="active"><img alt="Berry Lace Dress" src="{{ asset('theme/frontend/assets/pages/img/products/model3.jpg') }}"></a>
+                    <a href="javascript:;"><img alt="Berry Lace Dress" src="{{ asset('theme/frontend/assets/pages/img/products/model4.jpg') }}"></a>
+                    <a href="javascript:;"><img alt="Berry Lace Dress" src="{{ asset('theme/frontend/assets/pages/img/products/model5.jpg') }}"></a>
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-9">

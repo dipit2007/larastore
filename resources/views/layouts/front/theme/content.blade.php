@@ -5,9 +5,9 @@
               <div>
                 <div class="product-item">
                   <div class="pi-img-wrapper">
-                    <img src="{{ asset('assets/pages/img/products/k1.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
+                    <img src="{{ asset('theme/frontend/assets/pages/img/products/k1.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
                     <div>
-                      <a href="{{ asset('assets/pages/img/products/k1.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="{{ asset('theme/frontend/assets/pages/img/products/k1.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
                       <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>
@@ -20,9 +20,9 @@
               <div>
                 <div class="product-item">
                   <div class="pi-img-wrapper">
-                    <img src="{{ asset('assets/pages/img/products/k2.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
+                    <img src="{{ asset('theme/frontend/assets/pages/img/products/k2.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
                     <div>
-                      <a href="{{ asset('assets/pages/img/products/k2.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="{{ asset('theme/frontend/assets/pages/img/products/k2.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
                       <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>
@@ -34,9 +34,9 @@
               <div>
                 <div class="product-item">
                   <div class="pi-img-wrapper">
-                    <img src="{{ asset('assets/pages/img/products/k3.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
+                    <img src="{{ asset('theme/frontend/assets/pages/img/products/k3.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
                     <div>
-                      <a href="{{ asset('assets/pages/img/products/k3.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="{{ asset('theme/frontend/assets/pages/img/products/k3.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
                       <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>
@@ -48,9 +48,9 @@
               <div>
                 <div class="product-item">
                   <div class="pi-img-wrapper">
-                    <img src="{{ asset('assets/pages/img/products/k4.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
+                    <img src="{{ asset('theme/frontend/assets/pages/img/products/k4.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
                     <div>
-                      <a href="{{ asset('assets/pages/img/products/k4.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="{{ asset('theme/frontend/assets/pages/img/products/k4.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
                       <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>
@@ -63,9 +63,9 @@
               <div>
                 <div class="product-item">
                   <div class="pi-img-wrapper">
-                    <img src="{{ asset('assets/pages/img/products/k1.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
+                    <img src="{{ asset('theme/frontend/assets/pages/img/products/k1.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
                     <div>
-                      <a href="{{ asset('assets/pages/img/products/k1.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="{{ asset('theme/frontend/assets/pages/img/products/k1.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
                       <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>
@@ -77,9 +77,9 @@
               <div>
                 <div class="product-item">
                   <div class="pi-img-wrapper">
-                    <img src="{{ asset('assets/pages/img/products/k2.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
+                    <img src="{{ asset('theme/frontend/assets/pages/img/products/k2.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
                     <div>
-                      <a href="{{ asset('assets/pages/img/products/k2.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="{{ asset('theme/frontend/assets/pages/img/products/k2.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
                       <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>

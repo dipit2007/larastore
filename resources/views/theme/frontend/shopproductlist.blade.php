@@ -81,17 +81,17 @@
             <div class="sidebar-products clearfix">
               <h2>Bestsellers</h2>
               <div class="item">
-                <a href="shop-item.html"><img src="{{ asset('assets/pages/img/products/k1.jpg') }}" alt="Some Shoes in Animal with Cut Out"></a>
+                <a href="shop-item.html"><img src="{{ asset('theme/frontend/assets/pages/img/products/k1.jpg') }}" alt="Some Shoes in Animal with Cut Out"></a>
                 <h3><a href="shop-item.html">Some Shoes in Animal with Cut Out</a></h3>
                 <div class="price">$31.00</div>
               </div>
               <div class="item">
-                <a href="shop-item.html"><img src="{{ asset('assets/pages/img/products/k4.jpg') }}" alt="Some Shoes in Animal with Cut Out"></a>
+                <a href="shop-item.html"><img src="{{ asset('theme/frontend/assets/pages/img/products/k4.jpg') }}" alt="Some Shoes in Animal with Cut Out"></a>
                 <h3><a href="shop-item.html">Some Shoes in Animal with Cut Out</a></h3>
                 <div class="price">$23.00</div>
               </div>
               <div class="item">
-                <a href="shop-item.html"><img src="{{ asset('assets/pages/img/products/k3.jpg') }}" alt="Some Shoes in Animal with Cut Out"></a>
+                <a href="shop-item.html"><img src="{{ asset('theme/frontend/assets/pages/img/products/k3.jpg') }}" alt="Some Shoes in Animal with Cut Out"></a>
                 <h3><a href="shop-item.html">Some Shoes in Animal with Cut Out</a></h3>
                 <div class="price">$86.00</div>
               </div>
@@ -194,10 +194,10 @@
                             <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
                           </div>
                           @else
-                          <img src="{{ asset('assets/pages/img/products/model2.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
+                          <img src="{{ asset('theme/frontend/assets/pages/img/products/model2.jpg') }}" class="img-responsive" alt="Berry Lace Dress">
                           
                           <div>
-                            <a href="{{ asset('assets/pages/img/products/model2.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
+                            <a href="{{ asset('theme/frontend/assets/pages/img/products/model2.jpg') }}" class="btn btn-default fancybox-button">Zoom</a>
                             
                             <a href="#" class="add2wishlist btn btn-default" data-productsku="{{$productvariant->sku}}" data-productvid="{{$productvariant->id}}" > <i class="fa fa-heart"></i></a>
 
@@ -222,12 +222,12 @@
                     <!-- PRODUCT ITEM END -->
                     
 
-                    {{--*/ $loopcounter++ /*--}}
+                    @php $loopcounter++ @endphp
 
                     @if($loopcounter == 3)
                     </div>
                     <!-- END PRODUCT LIST -->
-                    {{--*/ $loopcounter = 0 /*--}}
+                    @php $loopcounter = 0 @endphp
                     @endif
 
                   @endforeach
@@ -283,19 +283,19 @@
   
 
   <!-- Page level plugin styles START -->
-  <link href="{{ asset('assets/plugins/fancybox/source/jquery.fancybox.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/plugins/owl.carousel/assets/owl.carousel.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/plugins/uniform/css/uniform.default.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('theme/frontend/assets/plugins/fancybox/source/jquery.fancybox.css') }}" rel="stylesheet">
+  <link href="{{ asset('theme/frontend/assets/plugins/owl.carousel/assets/owl.carousel.css') }}" rel="stylesheet">
+  <link href="{{ asset('theme/frontend/assets/plugins/uniform/css/uniform.default.css') }}" rel="stylesheet" type="text/css">
   <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"><!-- for slider-range -->
-  <link href="{{ asset('assets/plugins/rateit/src/rateit.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('theme/frontend/assets/plugins/rateit/src/rateit.css') }}" rel="stylesheet" type="text/css">
   <!-- Page level plugin styles END -->
 
 
-    <link href="{{ url('assets/selectize/dist/css/selectize.default.css') }}" rel="stylesheet">
-    <link href="{{ url('assets/selectize/dist/css/selectize.bootstrap2.css') }}" rel="stylesheet">
-    <link href="{{ url('assets/selectize/dist/css/selectize.bootstrap3.css') }}" rel="stylesheet">
-    <link href="{{ url('assets/selectize/dist/css/selectize.default.css') }}" rel="stylesheet">
-    <link href="{{ url('assets/selectize/dist/css/selectize.bootstrap3.css') }}" rel="stylesheet">
+    <link href="{{ url('theme/frontend/assets/selectize/dist/css/selectize.default.css') }}" rel="stylesheet">
+    <link href="{{ url('theme/frontend/assets/selectize/dist/css/selectize.bootstrap2.css') }}" rel="stylesheet">
+    <link href="{{ url('theme/frontend/assets/selectize/dist/css/selectize.bootstrap3.css') }}" rel="stylesheet">
+    <link href="{{ url('theme/frontend/assets/selectize/dist/css/selectize.default.css') }}" rel="stylesheet">
+    <link href="{{ url('theme/frontend/assets/selectize/dist/css/selectize.bootstrap3.css') }}" rel="stylesheet">
 
  
    <style type="text/css">
@@ -336,12 +336,12 @@
 @section('footer-page-level-javascripts')
 
 <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
-    <script src="{{ asset('assets/plugins/fancybox/source/jquery.fancybox.pack.js') }}" type="text/javascript"></script><!-- pop up -->
-    <script src="{{ asset('assets/plugins/owl.carousel/owl.carousel.min.js') }}" type="text/javascript"></script><!-- slider for products -->
-    <script src="{{ asset('assets/plugins/zoom/jquery.zoom.min.js') }}" type="text/javascript"></script><!-- product zoom -->
-    <script src="{{ asset('assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js') }}" type="text/javascript"></script><!-- Quantity -->
-    <script src="{{ asset('assets/plugins/uniform/jquery.uniform.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('assets/plugins/rateit/src/jquery.rateit.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('theme/frontend/assets/plugins/fancybox/source/jquery.fancybox.pack.js') }}" type="text/javascript"></script><!-- pop up -->
+    <script src="{{ asset('theme/frontend/assets/plugins/owl.carousel/owl.carousel.min.js') }}" type="text/javascript"></script><!-- slider for products -->
+    <script src="{{ asset('theme/frontend/assets/plugins/zoom/jquery.zoom.min.js') }}" type="text/javascript"></script><!-- product zoom -->
+    <script src="{{ asset('theme/frontend/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js') }}" type="text/javascript"></script><!-- Quantity -->
+    <script src="{{ asset('theme/frontend/assets/plugins/uniform/jquery.uniform.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('theme/frontend/assets/plugins/rateit/src/jquery.rateit.js') }}" type="text/javascript"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script><!-- for slider-range -->
 
 
@@ -353,7 +353,7 @@
 
 
 @section('initscript')
-<script src="{{ asset('assets/corporate/scripts/layout.js') }}" type="text/javascript"></script>
+<script src="{{ asset('theme/frontend/assets/corporate/scripts/layout.js') }}" type="text/javascript"></script>
     <script type="text/javascript">
         jQuery(document).ready(function() {
             Layout.init();    
