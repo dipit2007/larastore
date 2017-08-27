@@ -74,6 +74,20 @@
                             <span>Product Variant</span>
                         </a>
                     </li>
+
+                    <li @if($menu == "productvariantimage") class="active" @endif>
+                        <a href="{{ route('admin.product.variant.image.index') }}">
+                            <i class="material-icons">text_fields</i>
+                            <span>Product Variant Image</span>
+                        </a>
+                    </li>
+
+                    <li @if($menu == "productspecification") class="active" @endif>
+                        <a href="{{ route('admin.product.variant.specification.index') }}">
+                            <i class="material-icons">text_fields</i>
+                            <span>Product Variant Specification</span>
+                        </a>
+                    </li>
                     
                     @if(0)
                     <li>

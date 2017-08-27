@@ -196,6 +196,48 @@ Route::group(
             ]
         ]);
         // PRODUCT VARIANT END 
+
+        // PRODUCT VARIANT IMAGE
+
+        Route::get('productvariantimage/datatable', [ 'as' => 'admin.product.variant.image.datatable', 'uses' => 'ProductVariantImageController@datatable']);
+        Route::resource('productvariantimage','ProductVariantImageController', [
+            'names' => [
+                'index' => 'admin.product.variant.image.index',
+                'create' => 'admin.product.variant.image.create',
+                'store' => 'admin.product.variant.image.store',
+                'show' => 'admin.product.variant.image.show',
+                'edit' => 'admin.product.variant.image.edit',
+                'update' => 'admin.product.variant.image.update',
+                'destroy' => 'admin.product.variant.image.destroy',
+            ],
+
+            'parameters' => [
+                'id' => 'id'
+            ]
+        ]);
+        // PRODUCT VARIANT IMAGE END
+
+        // PRODUCT VARIANT SPECIFICATION
+
+        Route::get('productspecification/datatable', [ 'as' => 'admin.product.variant.specification.datatable', 'uses' => 'ProductSpecificationFeatureController@datatable']);
+        Route::resource('productspecification','ProductSpecificationFeatureController', [
+            'names' => [
+                'index' => 'admin.product.variant.specification.index',
+                'create' => 'admin.product.variant.specification.create',
+                'store' => 'admin.product.variant.specification.store',
+                'show' => 'admin.product.variant.specification.show',
+                'edit' => 'admin.product.variant.specification.edit',
+                'update' => 'admin.product.variant.specification.update',
+                'destroy' => 'admin.product.variant.specification.destroy',
+            ],
+
+            'parameters' => [
+                'id' => 'id'
+            ]
+        ]);
+        // PRODUCT VARIANT SPECIFICATION END
+
+
     }
 );
 
