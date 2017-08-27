@@ -32,12 +32,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 |
 */
 
-
-
-
-
-
-
+// FRONTEND GUEST
+include ('webfront.php');
 
 
 
