@@ -31,7 +31,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="{{ route('admin.product.attribute.value.create') }}">Add Product Attribute Value</a></li>
+                                        <li><a href="{{ route('admin.product.variant.specification.create') }}">Add Product Variant Specification</a></li>
                                         @if(0)
                                         <li><a href="javascript:void(0);">Another action</a></li>
                                         <li><a href="javascript:void(0);">Something else here</a></li>
@@ -46,7 +46,7 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Value</th>
+                                            <th>Name</th>
                                             <th>Description</th>
                                             <th>Created At</th>
                                             <th>Created By</th>
@@ -111,11 +111,11 @@
             "ordering":  false,
             "processing": true,
             "serverSide": true,                    
-            "ajax": "{{ route('admin.product.attribute.value.datatable') }}",
+            "ajax": "{{ route('admin.product.variant.specification.datatable') }}",
             "columns": [
             
             { data: 'id', name: 'id' },
-            { data: 'attributevalue', name: 'attributevalue' },
+            { data: 'title', name: 'title' },
             { data: 'description', name: 'description' },
             { data: 'created_at', name: 'created_at' },
             { data: 'user.name', name: 'user.name' },

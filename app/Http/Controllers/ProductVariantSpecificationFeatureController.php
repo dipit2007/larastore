@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\ProductVariantImage;
+use App\ProductVariantSpecificationFeature;
 use Illuminate\Http\Request;
+
 
 use App\Product;
 use App\ProductVariant;
@@ -14,9 +15,7 @@ use Yajra\Datatables\Datatables;
 
 use URL;
 
-use Carbon\Carbon;
-
-class ProductVariantImageController extends Controller
+class ProductVariantSpecificationFeatureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,16 +24,16 @@ class ProductVariantImageController extends Controller
      */
     public function index()
     {
-        $data['menu'] = "productvariantimage";
-        $data['submenu'] = "productvariantimagelist";
+        $data['menu'] = "productspecification";
+        $data['submenu'] = "productspecificationlist";
 
         $data['pageTitle'] = "PRODUCT";
         $data['smallPageTitle'] = "";
         
-        $data['contentCardHeaderTitle'] = "PRODUCT VARIANT IMAGE LIST";
+        $data['contentCardHeaderTitle'] = "PRODUCT VARIANT SPECIFICATION LIST";
 
 
-        return view('theme.backend.pages.product.variant.image.list', $data );
+        return view('theme.backend.pages.product.variant.specification.list', $data );
     }
 
     /**
@@ -44,13 +43,13 @@ class ProductVariantImageController extends Controller
      */
     public function create()
     {
-        $data['menu'] = "productvariantimage";
-        $data['submenu'] = "productvariantimagecreate";
+        $data['menu'] = "productspecification";
+        $data['submenu'] = "productspecificationcreate";
 
         $data['pageTitle'] = "PRODUCT";
         $data['smallPageTitle'] = "";
 
-        $data['contentCardHeaderTitle'] = "CREATE PRODUCT VARIANT IMAGE";
+        $data['contentCardHeaderTitle'] = "CREATE PRODUCT VARIANT SPECIFICATION";
 
         $productList = Product::pluck('name', 'id');
         $selectedProduct = 1;
@@ -64,7 +63,7 @@ class ProductVariantImageController extends Controller
         $data['productvarianList'] = $productvarianList;
         $data['selectedProductVariant'] = $selectedProductVariant;
 
-        return view('theme.backend.pages.product.variant.image.create', $data );
+        return view('theme.backend.pages.product.variant.specification.create', $data );
     }
 
     /**
@@ -80,57 +79,45 @@ class ProductVariantImageController extends Controller
             'productvariantsku' => 'required',
             'title' => 'required|max:255',
             'description' => 'required|max:255',
-            'image' => 'required',
             //'status' => 'required',
         ]);
 
         if ($validator->fails()) {
-            return redirect(route('admin.product.variant.image.create'))
+            return redirect(route('admin.product.variant.specification.create'))
                 ->withInput()
                 ->withErrors($validator);
         }
 
         $product_variant_id = $request->productvariantsku;
 
-        $productvariantimage = new ProductVariantImage;
+        $productvariantspecification = new ProductVariantSpecificationFeature;
         
-        $productvariantimage->product_id = $request->product;
-        $productvariantimage->product_variant_id = $product_variant_id;
+        $productvariantspecification->product_id = $request->product;
+        $productvariantspecification->product_variant_id = $product_variant_id;
 
         $productvariant = ProductVariant::findOrFail($product_variant_id);
 
-        $productvariantimage->product_sku = $productvariant->sku;
+        $productvariantspecification->product_sku = $productvariant->sku;
 
-        $productvariantimage->title = $request->title;
-        $productvariantimage->description = $request->description;
+        $productvariantspecification->title = $request->title;
+        $productvariantspecification->description = $request->description;
 
-        //$productvariantimage->product_variant_image_status_id = $request->status;
+        $productvariantspecification->product_variant_specification_status = 1;//$request->status;
 
-        if( $request->hasFile('image') && $request->file('image')->isValid() ) {
+        
 
-            $file = $request->file('image');
-            //getting timestamp
-            $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
-            
-            $name = $timestamp. '-' .$file->getClientOriginalName();
-            
-            $productvariantimage->filepath = $name;
+        $productvariantspecification->save();
 
-            $file->move(public_path().'/storage/', $name);
-        }
-
-        $productvariantimage->save();
-
-        return redirect(route('admin.product.variant.image.index'));
+        return redirect(route('admin.product.variant.specification.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\ProductVariantImage  $productVariantImage
+     * @param  \App\ProductSpecificationFeature  $productSpecificationFeature
      * @return \Illuminate\Http\Response
      */
-    public function show(ProductVariantImage $productVariantImage)
+    public function show(ProductSpecificationFeature $productSpecificationFeature)
     {
         //
     }
@@ -138,10 +125,10 @@ class ProductVariantImageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ProductVariantImage  $productVariantImage
+     * @param  \App\ProductSpecificationFeature  $productSpecificationFeature
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProductVariantImage $productVariantImage)
+    public function edit(ProductSpecificationFeature $productSpecificationFeature)
     {
         //
     }
@@ -150,10 +137,10 @@ class ProductVariantImageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ProductVariantImage  $productVariantImage
+     * @param  \App\ProductSpecificationFeature  $productSpecificationFeature
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductVariantImage $productVariantImage)
+    public function update(Request $request, ProductSpecificationFeature $productSpecificationFeature)
     {
         //
     }
@@ -161,10 +148,10 @@ class ProductVariantImageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ProductVariantImage  $productVariantImage
+     * @param  \App\ProductSpecificationFeature  $productSpecificationFeature
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductVariantImage $productVariantImage)
+    public function destroy(ProductSpecificationFeature $productSpecificationFeature)
     {
         //
     }
@@ -172,13 +159,13 @@ class ProductVariantImageController extends Controller
     {
         $statuses = [ 0 => "Disabled", 1 => "Active"];
 
-        $productvariantimages = ProductVariantImage::with(['user']); 
+        $productvariantspecificationfeatures = ProductVariantSpecificationFeature::with(['user']); 
 
-        return Datatables::of($productvariantimages)
-        ->addColumn('delete', function($data){ return '<a href="'.URL::route('admin.product.variant.image.destroy',$data->id).'">Delete</a>'; })
+        return Datatables::of($productvariantspecificationfeatures)
+        ->addColumn('delete', function($data){ return '<a href="'.URL::route('admin.product.variant.specification.destroy',$data->id).'">Delete</a>'; })
         //->editColumn('zone_status_id', '{{ $zone_status_id }}')
         //->editColumn('product_variant_image_status_id',function ($zone) { return $zone->product_variant_image_status_id; } )
-        ->addColumn('status',function ($data) { return $data->product_variant_image_status; } )
+        ->addColumn('status',function ($data) { return $data->product_variant_specification_status; } )
         ->make(true);
     }
 }

@@ -219,8 +219,8 @@ Route::group(
 
         // PRODUCT VARIANT SPECIFICATION
 
-        Route::get('productspecification/datatable', [ 'as' => 'admin.product.variant.specification.datatable', 'uses' => 'ProductSpecificationFeatureController@datatable']);
-        Route::resource('productspecification','ProductSpecificationFeatureController', [
+        Route::get('productspecification/datatable', [ 'as' => 'admin.product.variant.specification.datatable', 'uses' => 'ProductVariantSpecificationFeatureController@datatable']);
+        Route::resource('productspecification','ProductVariantSpecificationFeatureController', [
             'names' => [
                 'index' => 'admin.product.variant.specification.index',
                 'create' => 'admin.product.variant.specification.create',

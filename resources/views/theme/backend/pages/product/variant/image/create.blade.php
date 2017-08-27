@@ -27,7 +27,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="{{ route('admin.product.attribute.value.index') }}">Product Attribute Value List</a></li>
+                                        <li><a href="{{ route('admin.product.variant.image.index') }}">Product Variant Image List</a></li>
                                         @if(0)
                                         <li><a href="javascript:void(0);">Another action</a></li>
                                         <li><a href="javascript:void(0);">Something else here</a></li>
@@ -37,8 +37,8 @@
                             </ul>
                         </div>
                         <div class="body">                            
-                            {!! Form::open(array('route' => array('admin.product.attribute.value.store') )) !!}
-                                
+                            {!! Form::open(array('route' => array('admin.product.variant.image.store') , 'role' => "form", 'files'=>true )) !!}
+  
                                 <div class="col-md-12">
                                     <p>
                                         <b>Product</b>
@@ -50,27 +50,33 @@
 
                                 <div class="col-md-12">
                                     <p>
-                                        <b>Product Attribute</b>
+                                        <b>SKU</b>
                                     </p>
-                                    {!! Form::select('productattribute', $productAttributeList, $selectedProductAttribute, ['class' => 'form-control show-tick', 'data-live-search' => "true"]) !!}
-                                    
+                                    {!! Form::select('productvariantsku', $productvarianList, $selectedProductVariant, ['class' => 'form-control show-tick', 'data-live-search' => "true"]) !!}
 
                                 </div>
 
-                                <label for="product_name">Value</label>
+                                <label for="product_variant_image_title">Title</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="value" id="product_attribute_value" class="form-control" placeholder="Enter product Attribute Value">
+                                        <input type="text" name="title" id="product_variant_image_title" class="form-control" placeholder="Enter product Variant Image Title">
                                     </div>
                                 </div>
 
-                                <label for="product_description">Desciption</label>
+                                <label for="product_variant_image_description">Desciption</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="description" id="product_attribute_value_description" class="form-control" placeholder="Enter product Attribute Value description">
+                                        <input type="text" name="description" id="product_variant_image_description" class="form-control" placeholder="Enter product Variant Image description">
                                     </div>
                                 </div>
 
+
+                                <label for="product_variant_image">Image</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        {!! Form::file('image') !!}
+                                    </div>
+                                </div>
                                 
                                 <br>
                                 <button type="submit" class="btn bg-teal btn-lg waves-effect">

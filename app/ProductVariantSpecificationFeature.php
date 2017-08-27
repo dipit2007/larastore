@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\BaseModel;
 
 
-class ProductVariantImage extends BaseModel
+class ProductVariantSpecificationFeature extends BaseModel
 {
 	use SoftDeletes;
 
@@ -36,7 +36,7 @@ class ProductVariantImage extends BaseModel
      */
     protected $fillable = [
     						'product_id','product_sku','product_variant_id',
-    						'title', 'description', 'filepath','product_variant_image_status'
+    						'title', 'description','product_variant_specification_status'
     						];
 
     /**
@@ -53,7 +53,11 @@ class ProductVariantImage extends BaseModel
     {
         return $this->belongsTo('App\Product', 'product_id', 'id');
     }
-    
+
+    /*public function status()
+    {
+        return $this->hasOne('App\ProductVariantImageStatus', 'id', 'product_variant_image_status_id');
+    }*/
     public function user()
     {
         return $this->belongsTo('App\User', 'created_by', 'id');

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductVariantImagesTable extends Migration
+class CreateProductSpecificationFeaturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,23 @@ class CreateProductVariantImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_variant_images', function (Blueprint $table) {
+        Schema::create('product_variant_specification_features', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->string('product_sku',160);
-            $table->foreign('product_sku','product_variant_image_sku_f1')->references('sku')->on('product_variants');
+            $table->foreign('product_sku','product_variant_specification_sku_f1')->references('sku')->on('product_variants');
 
             $table->unsignedBigInteger('product_variant_id');
-            $table->foreign('product_variant_id','product_variant_image_id_f1')->references('id')->on('product_variants');
+            $table->foreign('product_variant_id','product_variant_specification_id_f1')->references('id')->on('product_variants');
 
             $table->unsignedInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
 
             $table->string('title');
             $table->text('description');
-            $table->string('filepath');
+            //$table->string('filepath');
 
-            $table->tinyInteger('product_variant_image_status')->default(0);
+            $table->tinyInteger('product_variant_specification_status')->default(0);
 
             $table->unsignedInteger('created_by')->nullable();
             $table->foreign('created_by')->references('id')->on('users');
@@ -52,6 +52,6 @@ class CreateProductVariantImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_variant_images');
+        Schema::dropIfExists('product_specification_features');
     }
 }
