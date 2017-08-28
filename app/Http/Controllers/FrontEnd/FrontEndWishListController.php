@@ -8,6 +8,21 @@ use Illuminate\Http\Request;
 
 use Cart;
 
+use App\Product;
+use App\ProductVariant;
+
+use Validator;
+
+use Auth;
+
+use App\ShopCart;
+
+use Shop;
+
+use App\ShopOrder;
+
+use App\WishList;
+
 class FrontEndWishListController extends Controller
 {
     /**
@@ -53,7 +68,100 @@ class FrontEndWishListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Cart::destroy();
+
+        Cart::instance('wishlist');
+
+        //return "Hello Cart";
+        $validator = Validator::make($request->all(), [
+            'productvid' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('front.product.index'))
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        if ($request->isMethod('post')) {
+            $productvid = $request->input('productvid');
+            $productvariant = ProductVariant::findOrFail($productvid);
+
+            //Cart::add([ 'id' => $productvariant->id, 'name' => $productvariant->name, 'qty' => 1, 'price' => $productvariant->price ]);
+            Cart::associate('ProductVariant','App')->add([ 'id' => $productvariant->id, 'name' => $productvariant->name, 'qty' => 1, 'price' => $productvariant->price ]);
+        }
+        if($request->ajax()){
+            return ['status' => "success", "message" => "Added to Wishlist"];
+        } else {
+            return redirect()->route('front.wishlist.index');
+        }
+    }
+
+        /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function removeitem(Request $request)
+    {
+        Cart::instance('wishlist');
+        //return "Hello Cart";
+        $validator = Validator::make($request->all(), [
+            'rowid' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return ['status' => 'failed', 'message' => "validator failed"];
+        }
+
+        if ($request->isMethod('post')) {
+            $rowId = $request->input('rowid');
+
+            Cart::remove($rowId); 
+
+            return ['status' => 'success', 'message' => "Item Removed Successfully"];       
+        } else {
+            return ['status' => 'failed', 'message' => "Method Not Allowed"];
+        }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function additem(Request $request)
+    {
+        Cart::instance('wishlist');
+        //return "Hello Cart";
+        $validator = Validator::make($request->all(), [
+            'rowid' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return ['status' => 'failed', 'message' => "validator failed"];
+        }
+
+        if ($request->isMethod('post')) {
+            $rowId = $request->input('rowid');
+
+             
+            $item = Cart::get($rowId);
+
+            Cart::remove($rowId);
+
+            Cart::instance('cart');
+
+            Cart::associate('ProductVariant','App')->add([ 'id' => $item->id, 'name' => $item->name, 'qty' => 1, 'price' => $item->price ]);
+            //Cart::add($item,1);
+
+            return ['status' => 'success', 'message' => "Item Removed Successfully"];       
+        } else {
+            return ['status' => 'failed', 'message' => "Method Not Allowed"];
+        }
+
     }
 
     /**
