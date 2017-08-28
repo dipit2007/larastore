@@ -6,6 +6,23 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+
+use App\Product;
+use App\ProductVariant;
+
+use Validator;
+
+use Cart;
+
+use Auth;
+
+use App\ShopCart;
+
+use Shop;
+
+use App\ShopOrder;
+
+
 class FrontEndAccountController extends Controller
 {
     /**
@@ -82,5 +99,14 @@ class FrontEndAccountController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function shopaccount()
+    {
+        return view('theme.frontend.shopaccount',[
+                'cart' => Cart::content(),
+                'cartsubtotal' => 0,//Cart::subtotal(),
+                'carttotal' => Cart::total(),
+                'carttotalitems' => Cart::count(),
+            ]);
     }
 }
