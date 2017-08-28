@@ -77,6 +77,9 @@ Route::group([
                 'id' => 'id'
         ]]);
 
+        Route::post('wishlistremoveitem',['as' => 'front.wishlist.removeitem', 'uses' => 'FrontEndWishListController@removeitem']);
+        Route::post('wishlistadditem',['as' => 'front.wishlist.additem', 'uses' => 'FrontEndWishListController@additem']);
+
         Route::get('shopaccount',['as' => 'front.account.shopaccount', 'uses' => 'FrontEndAccountController@shopaccount']);        
 	}
 );
