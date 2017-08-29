@@ -344,7 +344,8 @@ class FrontEndCartController extends Controller
             $productvariant = ProductVariant::findOrFail($productvid);
 
             //Cart::add([ 'id' => $productvariant->id, 'name' => $productvariant->name, 'qty' => 1, 'price' => $productvariant->price ]);
-            Cart::associate('ProductVariant','App')->add([ 'id' => $productvariant->id, 'name' => $productvariant->name, 'qty' => $productquantity , 'price' => $productvariant->price ]);
+            Cart::add([ 'id' => $productvariant->id, 'name' => $productvariant->name, 'qty' => $productquantity , 'price' => $productvariant->price ])->associate('App\ProductVariant');
+            //Cart::associate('ProductVariant','App')->add([ 'id' => $productvariant->id, 'name' => $productvariant->name, 'qty' => $productquantity , 'price' => $productvariant->price ]);
         }
         
         $cart = Cart::content();
@@ -352,7 +353,7 @@ class FrontEndCartController extends Controller
 
         //print "<pre>".print_r($cart,1)."</pre>"; //exit();
 
-        return view('front.theme.shopshoppingcart',[
+        return view('theme.frontend.shopshoppingcart',[
             'cart' => $cart,
             'cartsubtotal' => 0,//Cart::subtotal(),
             'carttotal' => Cart::total(),

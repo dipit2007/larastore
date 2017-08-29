@@ -47,6 +47,15 @@ Route::group([
             ]
         ]);
 
+        Route::post('placeorder',['as' => 'front.cart.placeorder', 'uses' => 'FrontEndCartController@placeorder']);
+
+        Route::get('placeorder',['as' => 'front.cart.placeorder', 'uses' => 'FrontEndCartController@getplaceorder']);
+
+        Route::post('removeitem',['as' => 'front.cart.removeitem', 'uses' => 'FrontEndCartController@removeitem']);
+
+        Route::post('changeitemquantity',['as' => 'front.cart.changeitemquantity', 'uses' => 'FrontEndCartController@changeitemquantity']);
+
+
         Route::resource('cart','FrontEndCartController', [
             'names' => [
                 'index' => 'front.cart.index',

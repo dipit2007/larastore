@@ -30,18 +30,20 @@
 		            <th class="goods-page-price">Unit price</th>
 		            <th class="goods-page-total" colspan="2">Total</th>
 		          </tr>
-		          {{--*/ $shopcartsubtotal = 0; $totaltax = 0 ; $totalshipping = 0; /*--}}
+		          @php $shopcartsubtotal = 0; $totaltax = 0 ; $totalshipping = 0; @endphp
 
 		          @foreach($cart as $item)
 
-		          {{--*/ $shopcartsubtotal += $item->subtotal; $totaltax += $item->productvariant->tax * $item->qty; $totalshipping += $item->productvariant->shipping  * $item->qty ; /*--}}
+                  @php //dd($item); @endphp
+
+		          @php $shopcartsubtotal += $item->qty * $item->price;  $totaltax += $item->model->tax * $item->qty; $totalshipping += $item->model->shipping  * $item->qty ; @endphp
 
 		          
 		          <tr>
 		            <td class="goods-page-image">
 		              <a href="javascript:;">
-		              	@if( count( $item->productvariant->images ) )
-		              	<img src="{{ asset('storage/').'/'. $item->productvariant->images->first()->filepath }}" alt="Berry Lace Dress">
+		              	@if( count( $item->model->images ) )
+		              	<img src="{{ asset('storage/').'/'. $item->model->images->first()->filepath }}" alt="Berry Lace Dress">
 		              	@else
 		              	<img src="{{ asset('theme/frontend/assets/pages/img/products/model3.jpg') }}" alt="Berry Lace Dress">
 		              	@endif
@@ -119,7 +121,7 @@
                 </li>
 	            <li class="shopping-total-price">
 	              <em>Total</em>
-	              {{--*/ $cartgrandtotal = $carttotal + $totalshipping + $totaltax /*--}}
+	              @php $cartgrandtotal = $carttotal + $totalshipping + $totaltax @endphp
 	              <strong class="price" id="carttotal"><span>$</span>{{ $cartgrandtotal }}</strong>
 	            </li>
 	          </ul>
