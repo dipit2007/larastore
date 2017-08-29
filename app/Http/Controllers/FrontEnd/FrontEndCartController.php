@@ -432,6 +432,9 @@ class FrontEndCartController extends Controller
      */
     public function changeitemquantity(Request $request)
     {
+        // TODO
+        // 1. When total qty becomes zero remove whole row otherwise rowId does not exists error
+
         //return "Hello Cart";
         $validator = Validator::make($request->all(), [
             'rowid' => 'required',
