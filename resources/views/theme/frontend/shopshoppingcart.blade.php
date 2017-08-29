@@ -59,7 +59,7 @@
 		            </td>
 		            <td class="goods-page-quantity">
 		              <div class="product-quantity">
-		                  <input id="product-quantity-{{ $item->id }}" type="text" value="{{ $item->qty }}" readonly class="form-control input-sm product-quantity-input" data-rowid="{{$item->rowid}}">
+		                  <input id="product-quantity-{{ $item->id }}" type="text" value="{{ $item->qty }}" readonly class="form-control input-sm product-quantity-input" data-rowid="{{$item->rowId}}">
 		              </div>
 		            </td>
 		            <td class="goods-page-price">
@@ -69,7 +69,7 @@
 		              <strong><span>$</span>{{$item->subtotal}}</strong>
 		            </td>
 		            <td class="del-goods-col">
-		              <a class="del-goods" data-rowid="{{$item->rowid}}" href="javascript:;">&nbsp;</a>
+		              <a class="del-goods" data-rowid="{{$item->rowId}}" href="javascript:;">&nbsp;</a>
 		            </td>
 		          </tr>
 		          @endforeach

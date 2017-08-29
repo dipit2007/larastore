@@ -400,8 +400,8 @@ class FrontEndCartController extends Controller
             }  */    
             foreach($cart as $item) {
                 $shopcartsubtotal += $item->price * $item->qty ;
-                $totaltax += $item->productvariant->tax * $item->qty ;
-                $totalshipping += $item->productvariant->shipping * $item->qty ;
+                $totaltax += $item->model->tax * $item->qty ;
+                $totalshipping += $item->model->shipping * $item->qty ;
             }
 
             //$shopcartsubtotal = Cart::subtotal();
@@ -464,8 +464,8 @@ class FrontEndCartController extends Controller
             }  */    
             foreach($cart as $item) {
                 $shopcartsubtotal += $item->price * $item->qty ;
-                $totaltax += $item->productvariant->tax * $item->qty ;
-                $totalshipping += $item->productvariant->shipping * $item->qty ;
+                $totaltax += $item->model->tax * $item->qty ;
+                $totalshipping += $item->model->shipping * $item->qty ;
             }
 
             //$shopcartsubtotal = Cart::subtotal();
