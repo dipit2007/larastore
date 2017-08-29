@@ -293,6 +293,8 @@
 		        var rowid = $(this).data("rowid");
 		        var quantity = $(this).val();
 
+                var removerow = $(this).parent().parent().parent().parent();
+
 		        $.ajaxSetup({
                     headers: {
                       'X-CSRF-TOKEN': $('input[name="_token"]').val(),
@@ -339,6 +341,9 @@
                         	//$(parentdiv).append(errorString);
                         	//$('.goods-data').append(errorString);
                         	$('body').append(errorString);
+                            if(quantity == 0){
+                                removerow.remove();
+                            }
                         }
 
                     },
