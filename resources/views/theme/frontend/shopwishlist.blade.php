@@ -56,7 +56,7 @@
                     <td class="goods-page-image">
                       <a href="javascript:;">                      
                       @if( count( $item->model->images ) )
-                        <img src="{{ asset('storage/').'/'. $item->productvariant->images->first()->filepath }}" alt="Berry Lace Dress">
+                        <img src="{{ asset('storage/').'/'. $item->model->images->first()->filepath }}" alt="Berry Lace Dress">
                       @else
                         <img src="{{ asset('theme/frontend/assets/pages/img/products/model3.jpg') }}" alt="Berry Lace Dress">
                       @endif
