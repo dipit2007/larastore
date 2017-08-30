@@ -144,7 +144,7 @@ class FrontEndCartController extends Controller
 
             //$shopcart = ShopCart::current();
 
-            return view('front.theme.shopcheckout',[
+            return view('theme.frontend.shopcheckout',[
                 'cart' => $cart,
                 //'shopcart' => $shopcart,
                 'cartsubtotal' => 0,//Cart::subtotal(),
@@ -178,7 +178,7 @@ class FrontEndCartController extends Controller
 
             //print "<pre>" . print_r($shopcart,1) . "</pre>";
 
-                return view('front.theme.shopcheckout',[
+                return view('theme.frontend.shopcheckout',[
                     'cart' => $cart,
                     'shopcart' => $shopcart,
                     'cartsubtotal' => 0,//Cart::subtotal(),
@@ -187,7 +187,7 @@ class FrontEndCartController extends Controller
                 ]);
 
             } else {
-                return view('front.theme.shopshoppingcartnull',[
+                return view('theme.frontend.shopshoppingcartnull',[
                 'cart' => Cart::content(),
                 'shopcart' => $shopcart,
                 'cartsubtotal' => 0,//Cart::subtotal(),

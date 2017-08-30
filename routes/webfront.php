@@ -71,6 +71,9 @@ Route::group([
         ]]);
 
         Route::get('checkout',['as' => 'front.cart.checkout', 'uses' => 'FrontEndCartController@checkout']);
+        Route::post('cartcheckoutlogin',['as' => 'front.cart.checkoutlogin', 'uses' => 'FrontEndCartController@cartcheckoutlogin']);
+        Route::post('checkoutaccountbillingaddress',['as' => 'front.cart.checkoutaccountbillingaddress', 'uses' => 'FrontEndCartController@checkoutaccountbillingaddress']);
+
 
         Route::resource('wishlist','FrontEndWishListController', [
             'names' => [
