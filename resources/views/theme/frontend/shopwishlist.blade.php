@@ -46,19 +46,19 @@
                     <th class="goods-page-price" colspan="2">Unit price</th>
                   </tr>
                   
-                  {{--*/ $shopcartsubtotal = 0; $totaltax = 0 ; $totalshipping = 0; /*--}}
+                  @php $shopcartsubtotal = 0; $totaltax = 0 ; $totalshipping = 0; @endphp
 
                   @foreach($wishlist as $item)
 
-                  {{--*/ $shopcartsubtotal += $item->subtotal; ; $totaltax += $item->totaltax; $totalshipping += $item->totalshipping ; /*--}}
+                  @php $shopcartsubtotal += $item->subtotal; ; $totaltax += $item->totaltax; $totalshipping += $item->totalshipping ; @endphp
 
                   <tr>
                     <td class="goods-page-image">
                       <a href="javascript:;">                      
-                      @if( count( $item->productvariant->images ) )
+                      @if( count( $item->model->images ) )
                         <img src="{{ asset('storage/').'/'. $item->productvariant->images->first()->filepath }}" alt="Berry Lace Dress">
                       @else
-                        <img src="{{ asset('assets/pages/img/products/model3.jpg') }}" alt="Berry Lace Dress">
+                        <img src="{{ asset('theme/frontend/assets/pages/img/products/model3.jpg') }}" alt="Berry Lace Dress">
                       @endif
                       </a>
                     </td>
@@ -74,15 +74,15 @@
                       <strong><span>$</span>{{$item->price}}</strong>
                     </td>
                     <td class="del-goods-col">
-                      <a class="del-goods" data-rowid="{{$item->rowid}}" href="javascript:;">&nbsp;</a>
-                      <a class="add-goods" data-rowid="{{$item->rowid}}" href="javascript:;">&nbsp;</a>
+                      <a class="del-goods" data-rowid="{{$item->rowId}}" href="javascript:;">&nbsp;</a>
+                      <a class="add-goods" data-rowid="{{$item->rowId}}" href="javascript:;">&nbsp;</a>
                     </td>
                   </tr>
                   @endforeach
                   @if(0)
                   <tr>
                     <td class="goods-page-image">
-                      <a href="javascript:;"><img src="{{ asset('assets/pages/img/products/model4.jpg') }} " alt="Berry Lace Dress"></a>
+                      <a href="javascript:;"><img src="{{ asset('theme/frontend/assets/pages/img/products/model4.jpg') }} " alt="Berry Lace Dress"></a>
                     </td>
                     <td class="goods-page-description">
                       <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
@@ -157,11 +157,11 @@
 
 
   <!-- Page level plugin styles START -->
-  <link href="{{ asset('assets/plugins/fancybox/source/jquery.fancybox.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/plugins/owl.carousel/assets/owl.carousel.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/plugins/uniform/css/uniform.default.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('theme/frontend/assets/plugins/fancybox/source/jquery.fancybox.css') }}" rel="stylesheet">
+  <link href="{{ asset('theme/frontend/assets/plugins/owl.carousel/assets/owl.carousel.css') }}" rel="stylesheet">
+  <link href="{{ asset('theme/frontend/assets/plugins/uniform/css/uniform.default.css') }}" rel="stylesheet" type="text/css">
   <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"><!-- for slider-range -->
-  <link href="{{ asset('assets/plugins/rateit/src/rateit.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('theme/frontend/assets/plugins/rateit/src/rateit.css') }}" rel="stylesheet" type="text/css">
   <!-- Page level plugin styles END -->
 
 
@@ -172,12 +172,12 @@
 @section('footer-page-level-javascripts')
 
 <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
-    <script src="{{ asset('assets/plugins/fancybox/source/jquery.fancybox.pack.js') }}" type="text/javascript"></script><!-- pop up -->
-    <script src="{{ asset('assets/plugins/owl.carousel/owl.carousel.min.js') }}" type="text/javascript"></script><!-- slider for products -->
-    <script src="{{ asset('assets/plugins/zoom/jquery.zoom.min.js') }}" type="text/javascript"></script><!-- product zoom -->
-    <script src="{{ asset('assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js') }}" type="text/javascript"></script><!-- Quantity -->
-    <script src="{{ asset('assets/plugins/uniform/jquery.uniform.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('assets/plugins/rateit/src/jquery.rateit.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('theme/frontend/assets/plugins/fancybox/source/jquery.fancybox.pack.js') }}" type="text/javascript"></script><!-- pop up -->
+    <script src="{{ asset('theme/frontend/assets/plugins/owl.carousel/owl.carousel.min.js') }}" type="text/javascript"></script><!-- slider for products -->
+    <script src="{{ asset('theme/frontend/assets/plugins/zoom/jquery.zoom.min.js') }}" type="text/javascript"></script><!-- product zoom -->
+    <script src="{{ asset('theme/frontend/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js') }}" type="text/javascript"></script><!-- Quantity -->
+    <script src="{{ asset('theme/frontend/assets/plugins/uniform/jquery.uniform.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('theme/frontend/assets/plugins/rateit/src/jquery.rateit.js') }}" type="text/javascript"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script><!-- for slider-range -->
 
     
@@ -187,7 +187,7 @@
 
 
 @section('initscript')
-<script src="{{ asset('assets/corporate/scripts/layout.js') }}" type="text/javascript"></script>
+<script src="{{ asset('theme/frontend/assets/corporate/scripts/layout.js') }}" type="text/javascript"></script>
     <script type="text/javascript">
         jQuery(document).ready(function() {
             Layout.init();    

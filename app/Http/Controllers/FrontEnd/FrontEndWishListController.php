@@ -88,7 +88,7 @@ class FrontEndWishListController extends Controller
             $productvariant = ProductVariant::findOrFail($productvid);
 
             //Cart::add([ 'id' => $productvariant->id, 'name' => $productvariant->name, 'qty' => 1, 'price' => $productvariant->price ]);
-            Cart::associate('ProductVariant','App')->add([ 'id' => $productvariant->id, 'name' => $productvariant->name, 'qty' => 1, 'price' => $productvariant->price ]);
+            Cart::add([ 'id' => $productvariant->id, 'name' => $productvariant->name, 'qty' => 1, 'price' => $productvariant->price ])->associate('App\ProductVariant');
         }
         if($request->ajax()){
             return ['status' => "success", "message" => "Added to Wishlist"];
@@ -154,7 +154,7 @@ class FrontEndWishListController extends Controller
 
             Cart::instance('cart');
 
-            Cart::associate('ProductVariant','App')->add([ 'id' => $item->id, 'name' => $item->name, 'qty' => 1, 'price' => $item->price ]);
+            Cart::add([ 'id' => $item->id, 'name' => $item->name, 'qty' => 1, 'price' => $item->price ])->associate('App\ProductVariant');
             //Cart::add($item,1);
 
             return ['status' => 'success', 'message' => "Item Removed Successfully"];       
