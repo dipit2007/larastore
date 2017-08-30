@@ -45,7 +45,7 @@ class ShopSetupTables extends Migration
                 ->onDelete('cascade');
             $table->foreign('cart_id')
                 ->references('id')
-                ->on('carts')
+                ->on('cart')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->unique(['sku', 'cart_id']);
@@ -130,6 +130,6 @@ class ShopSetupTables extends Migration
         Schema::drop('order_status');
         Schema::drop('coupons');
         Schema::drop('items');
-        Schema::drop('carts');
+        Schema::drop('cart');
     }
 }
