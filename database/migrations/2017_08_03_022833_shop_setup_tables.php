@@ -12,7 +12,7 @@ class ShopSetupTables extends Migration
     public function up()
     {
         // Create table for storing carts
-        Schema::create('shop_carts', function (Blueprint $table) {
+        Schema::create('cart', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->timestamps();
@@ -24,7 +24,7 @@ class ShopSetupTables extends Migration
             $table->unique('user_id');
         });
         // Create table for storing items
-        Schema::create('shop_items', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->bigInteger('cart_id')->unsigned()->nullable();
@@ -45,7 +45,7 @@ class ShopSetupTables extends Migration
                 ->onDelete('cascade');
             $table->foreign('cart_id')
                 ->references('id')
-                ->on('shop_carts')
+                ->on('carts')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->unique(['sku', 'cart_id']);
@@ -56,7 +56,7 @@ class ShopSetupTables extends Migration
             $table->index(['reference_id']);
         });
         // Create table for storing coupons
-        Schema::create('shop_coupons', function (Blueprint $table) {
+        Schema::create('coupons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code')->unique();
             $table->string('name');
@@ -73,7 +73,7 @@ class ShopSetupTables extends Migration
             $table->index(['sku']);
         });
         // Create table for storing coupons
-        Schema::create('shop_order_status', function (Blueprint $table) {
+        Schema::create('order_status', function (Blueprint $table) {
             $table->string('code', 32);
             $table->string('name');
             $table->string('description')->nullable();
@@ -81,7 +81,7 @@ class ShopSetupTables extends Migration
             $table->primary('code');
         });
         // Create table for storing carts
-        Schema::create('shop_orders', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->string('statusCode', 32);
@@ -93,13 +93,13 @@ class ShopSetupTables extends Migration
                 ->onDelete('cascade');
             $table->foreign('statusCode')
                 ->references('code')
-                ->on('shop_order_status')
+                ->on('order_status')
                 ->onUpdate('cascade');
             $table->index(['user_id', 'statusCode']);
             $table->index(['id', 'user_id', 'statusCode']);
         });
         // Create table for storing transactions
-        Schema::create('shop_transactions', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('order_id')->unsigned();
             $table->string('gateway', 64);
@@ -109,7 +109,7 @@ class ShopSetupTables extends Migration
             $table->timestamps();
             $table->foreign('order_id')
                 ->references('id')
-                ->on('shop_orders')
+                ->on('orders')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->index(['order_id']);
@@ -125,11 +125,11 @@ class ShopSetupTables extends Migration
      */
     public function down()
     {
-        Schema::drop('shop_transactions');
-        Schema::drop('shop_orders');
-        Schema::drop('shop_order_status');
-        Schema::drop('shop_coupons');
-        Schema::drop('shop_items');
-        Schema::drop('shop_carts');
+        Schema::drop('transactions');
+        Schema::drop('orders');
+        Schema::drop('order_status');
+        Schema::drop('coupons');
+        Schema::drop('items');
+        Schema::drop('carts');
     }
 }
